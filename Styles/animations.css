@@ -1,0 +1,41 @@
+
+/*animation section*/
+.hiddenx {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 2s;
+  }
+  
+  .showx {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  
+  .hiddeny {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 2s;
+  }
+  
+  .showy {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  
+
+  .hiddenup{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+    transition: all 1s;
+  }
+
+  .showup{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0%);
+  }
