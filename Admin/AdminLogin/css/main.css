@@ -58,7 +58,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #ff0000;
+  color: #6777ef;
 }
 
 /*---------------------------------------------*/
@@ -311,7 +311,7 @@ iframe {
 }
 
 .input100:focus + .focus-input100 + .symbol-input100 {
-  color: #ff0000;
+  color: #6777ef;
   padding-left: 28px;
 }
 
@@ -339,7 +339,7 @@ iframe {
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #ff0000;
+  background: #6777ef;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
