@@ -1,8 +1,8 @@
 <?php 
 
 $serverName = "localhost"; // Remove 'https://' and any protocol prefixes
-$userName = ""; //demo
-$password = ""; //iRoDUi8QoZgQIYs
+$userName = "demo"; //demo
+$password = "iRoDUi8QoZgQIYs"; //iRoDUi8QoZgQIYs
 $dbName = "ea_web_admin";
 
 try {
@@ -13,6 +13,11 @@ try {
     echo "Connection Failed: " . $e->getMessage();
     exit; // Stop execution if connection fails
 }
+
+
+
+
+
 
 
 ?>
