@@ -2,7 +2,17 @@
 
 session_start();
 require_once '../../BackEnd/DB/db.conn.php';
-$_SESSION['loginUnSucess'] = 1;
+
+$userName = $_SESSION['userName'] ;
+$userMail = $_SESSION['userMail'] ;
+$userAccess = $_SESSION['AdminType'] ;
+
+if(!$userName || !$userMail){
+  header('Location: ../../index.html');
+  exit;
+}
+
+
 ?>
 
 
