@@ -13,6 +13,8 @@ if(!$userName || !$userMail){
 }
 
 
+
+
 ?>
 
 
@@ -42,16 +44,16 @@ if(!$userName || !$userMail){
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <?php
 
-    if($_SESSION['loginUnSucess'] == 1){
+    if($_SESSION['item_Added'] == 1){
       echo '<script>
         Swal.fire({
           icon: "success",
-          title: "Login Success",
+          title: "Item Successfully Added",
           showConfirmButton: false,
           timer: 1500
         });
       </script>';
-      
+      $_SESSION['item_Added'] = null ;
     }
 
   ?>
@@ -368,31 +370,37 @@ if(!$userName || !$userMail){
           </div>
 
           <div class="card">
-                  <form class="needs-validation" novalidate="">
+                  <form class="needs-validation" action="../../../BackEnd/AddItems/ethanet.conn.php" novalidate=""  enctype="multipart/form-data" method="post" >
                     <div class="card-header">
                       <h4>Add Ethernet Switch</h4>
                     </div>
                     <div class="card-body">
                       <div class="form-group">
                         <label>Item Code</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control" name="itemcode" required="">
                         
                       </div>
                       <div class="form-group">
                         <label>Order No</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control" name="orderNo" required="">
                         
                       </div>
                       
                       <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" required=""></textarea>
+                        <textarea class="form-control" name="discription" required=""></textarea>
+                        
+                      </div>
+
+                      <div class="form-group">
+                        <label>More Details</label>
+                        <textarea class="form-control" name="moreDetails" required=""></textarea>
                         
                       </div>
 
                       <div class="form-group">
                         <label>Select <code>.POE Type / Transceivers</code></label>
-                        <select class="form-control form-control-lg">
+                        <select class="form-control form-control-lg" name="poe">
                             <option value="GIG_NPE">GIGABIT ETHERNET - NON POE</option>
                             <option value="GIG_PE">GIGABIT ETHERNET - POE</option>
                             <option value="FE_NPE">FAST ETHERNET - NON POE</option>
@@ -403,7 +411,7 @@ if(!$userName || !$userMail){
 
                       <div class="form-group">
                         <label>Select <code>.Company</code></label>
-                        <select class="form-control form-control-lg">
+                        <select class="form-control form-control-lg" name="company">
                             <option value="GIG_NPE">LEVEL ONE</option>
                             <option value="GIG_PE">CISCO</option>
                         </select>
@@ -412,21 +420,21 @@ if(!$userName || !$userMail){
 
                       <div class="form-group">
                         <label>Upload Image</label>
-                        <input type="file" class="form-control">
+                        <input type="file" class="form-control" name="image" required="">
                       </div>
 
                       <div class="form-group">
                         <label>Technical Document Link</label>
-                        <input type="text" class="form-control" >
+                        <input type="text" class="form-control" name="technical" >
                         
                       </div>
 
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary">Submit</button>
+                      <button class="btn btn-primary" name="add">Submit</button>
                     </div>
                   </form>
-                </div>
+          </div>
 
           
 

@@ -51,7 +51,7 @@ if(!$userName || !$userMail){
           timer: 1500
         });
       </script>';
-      
+      $_SESSION['loginUnSucess'] =null;
     }
 
   ?>
