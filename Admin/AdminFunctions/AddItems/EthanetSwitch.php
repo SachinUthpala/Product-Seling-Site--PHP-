@@ -13,6 +13,54 @@ if(!$userName || !$userMail){
 }
 
 
+// fetching data from database
+$sql_GIG_NPE = "SELECT COUNT(*) as total_items FROM `ethanet_switches` WHERE poeType = 'GIG_NPE'";
+$stmt_GIG_NPE = $conn->prepare($sql_GIG_NPE);
+$stmt_GIG_NPE->execute();
+$result_GIG_NPE = $stmt_GIG_NPE->fetch(PDO::FETCH_ASSOC);
+$total_items_GIG_NPE = $result_GIG_NPE['total_items'];
+
+
+$sql_GIG_PE= "SELECT COUNT(*) as total_items_PE FROM `ethanet_switches` WHERE poeType = 'GIG_PE'";
+$stmt_GIG_PE = $conn->prepare($sql_GIG_PE);
+$stmt_GIG_PE->execute();
+$result_GIG_PE = $stmt_GIG_PE->fetch(PDO::FETCH_ASSOC);
+$total_items_GIG_PE = $result_GIG_PE['total_items_PE'];
+
+$sql_FE_NPE= "SELECT COUNT(*) as total_items_FE_NPE FROM `ethanet_switches` WHERE poeType = 'FE_NPE'";
+$stmt_FE_NPE = $conn->prepare($sql_FE_NPE);
+$stmt_FE_NPE->execute();
+$result_FE_NPE = $stmt_FE_NPE->fetch(PDO::FETCH_ASSOC);
+$total_items_FE_NPE = $result_FE_NPE['total_items_FE_NPE'];
+
+
+
+
+$sql_FE_PE= "SELECT COUNT(*) as total_itemsFE_PE FROM `ethanet_switches` WHERE poeType = 'FE_PE'";
+$stmt_FE_PE= $conn->prepare($sql_FE_PE);
+$stmt_FE_PE->execute();
+$result_FE_PE = $stmt_FE_PE->fetch(PDO::FETCH_ASSOC);
+$total_items_FE_PE = $result_FE_PE['total_itemsFE_PE'];
+
+
+
+
+$sql_TRANSCEIVERS= "SELECT COUNT(*) as total_items_TRANSCEIVERS FROM `ethanet_switches` WHERE poeType = 'TRANSCEIVERS'";
+$stmt_TRANSCEIVERS = $conn->prepare($sql_TRANSCEIVERS);
+$stmt_TRANSCEIVERS->execute();
+$result_TRANSCEIVERS= $stmt_TRANSCEIVERS->fetch(PDO::FETCH_ASSOC);
+$total_items_TRANSCEIVERS = $result_TRANSCEIVERS['total_items_TRANSCEIVERS'];
+
+
+$all_sql = "SELECT COUNT(*) as total_items FROM `ethanet_switches`";
+$sqmtp_all = $conn->prepare($all_sql);
+$sqmtp_all->execute();
+$result_all = $sqmtp_all->fetch(PDO::FETCH_ASSOC);
+$total_items_all = $result_all['total_items'];
+
+
+
+
 
 
 ?>
@@ -285,9 +333,9 @@ if(!$userName || !$userMail){
                     <div class="row ">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                         <div class="card-content">
-                          <h5 class="font-15">New Booking</h5>
-                          <h2 class="mb-3 font-18">258</h2>
-                          <p class="mb-0"><span class="col-green">10%</span> Increase</p>
+                          <h5 class="font-15">NON POE</h5>
+                          <h2 class="mb-3 font-18"><?php echo $total_items_GIG_NPE; ?></h2>
+                          <p class="mb-0"><span class="col-green">GIGABYTE</span></p>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -300,6 +348,7 @@ if(!$userName || !$userMail){
                 </div>
               </div>
             </div>
+
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div class="card">
                 <div class="card-statistic-4">
@@ -307,9 +356,9 @@ if(!$userName || !$userMail){
                     <div class="row ">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                         <div class="card-content">
-                          <h5 class="font-15"> Customers</h5>
-                          <h2 class="mb-3 font-18">1,287</h2>
-                          <p class="mb-0"><span class="col-orange">09%</span> Decrease</p>
+                          <h5 class="font-15"> POE</h5>
+                          <h2 class="mb-3 font-18"><?php echo $total_items_GIG_PE; ?></h2>
+                          <p class="mb-0"><span class="col-green">GIGABYTE</span></p>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -322,6 +371,7 @@ if(!$userName || !$userMail){
                 </div>
               </div>
             </div>
+
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div class="card">
                 <div class="card-statistic-4">
@@ -329,10 +379,9 @@ if(!$userName || !$userMail){
                     <div class="row ">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                         <div class="card-content">
-                          <h5 class="font-15">New Project</h5>
-                          <h2 class="mb-3 font-18">128</h2>
-                          <p class="mb-0"><span class="col-green">18%</span>
-                            Increase</p>
+                          <h5 class="font-15">NON POE</h5>
+                          <h2 class="mb-3 font-18"><?php echo $total_items_FE_NPE; ?></h2>
+                          <p class="mb-0"><span class="col-green">FAST E-NET</span></p>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -345,6 +394,8 @@ if(!$userName || !$userMail){
                 </div>
               </div>
             </div>
+
+
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div class="card">
                 <div class="card-statistic-4">
@@ -352,14 +403,60 @@ if(!$userName || !$userMail){
                     <div class="row ">
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                         <div class="card-content">
-                          <h5 class="font-15">Revenue</h5>
-                          <h2 class="mb-3 font-18">$48,697</h2>
-                          <p class="mb-0"><span class="col-green">42%</span> Increase</p>
+                          <h5 class="font-15">POE</h5>
+                          <h2 class="mb-3 font-18"><?php echo $total_items_FE_PE; ?></h2>
+                          <p class="mb-0"><span class="col-green">FAST E-NET</span></p>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                         <div class="banner-img">
-                          <img src="assets/img/banner/4.png" alt="">
+                          <img src="assets/img/banner/3.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                        <div class="card-content">
+                          <h5 class="font-15">TR-SEVER</h5>
+                          <h2 class="mb-3 font-18"><?php echo $total_items_TRANSCEIVERS ; ?></h2>
+                          <p class="mb-0"><span class="col-green">TRANSCEIVER</span></p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="assets/img/banner/3.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                        <div class="card-content">
+                          <h5 class="font-15">TOTAL</h5>
+                          <h2 class="mb-3 font-18"><?php echo $total_items_all ; ?></h2>
+                          <p class="mb-0"><span class="col-green">PRODUCTS</span></p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="assets/img/banner/3.png" alt="">
                         </div>
                       </div>
                     </div>
@@ -412,8 +509,8 @@ if(!$userName || !$userMail){
                       <div class="form-group">
                         <label>Select <code>.Company</code></label>
                         <select class="form-control form-control-lg" name="company">
-                            <option value="GIG_NPE">LEVEL ONE</option>
-                            <option value="GIG_PE">CISCO</option>
+                            <option value="LEVEL_ONE">LEVEL ONE</option>
+                            <option value="CISCO">CISCO</option>
                         </select>
 
                       </div>
