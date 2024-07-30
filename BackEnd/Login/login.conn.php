@@ -16,13 +16,19 @@ if(isset($_POST['getuser'])){
         $hashedPassword = $row['userPassword'];
 
         if(password_verify($password, $hashedPassword)){
+            $_SESSION['userName'] = $row['userName'];
+            $_SESSION['userMail'] = $row['userMail'];
+            $_SESSION['AdminType'] = $row['adminAccess'];
+            $_SESSION['loginSucess'] = 1;
             header("Location: ../../Admin/AdminFunctions/Admin.php");
         }else{
-            
+            $_SESSION['loginUnSucess'] = 1;
+            header("Location: ../../Admin/AdminLogin.login.php");
         }
 
     }else{
-        
+        $_SESSION['loginUnSucess'] = 1;
+        header("Location: ../../Admin/AdminLogin.login.php");
     }
 
 }
