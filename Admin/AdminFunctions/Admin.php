@@ -2,8 +2,11 @@
 
 session_start();
 require_once '../../BackEnd/DB/db.conn.php';
-
+$_SESSION['loginUnSucess'] = 1;
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +27,28 @@ require_once '../../BackEnd/DB/db.conn.php';
 </head>
 
 <body>
+
+  <!-- sweet alert js -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <?php
+
+    if($_SESSION['loginUnSucess'] == 1){
+      echo '<script>
+        Swal.fire({
+          icon: "success",
+          title: "Login Success",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      </script>';
+      
+    }
+
+  ?>
+
+
+
+  <!-- sweet alert options -->
   <div class="loader"></div>
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
@@ -776,11 +801,10 @@ require_once '../../BackEnd/DB/db.conn.php';
   <script src="assets/js/scripts.js"></script>
   <!-- Custom JS File -->
   <script src="assets/js/custom.js"></script>
-  <!-- sweet alert js -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 
+  
 
 
 </body>

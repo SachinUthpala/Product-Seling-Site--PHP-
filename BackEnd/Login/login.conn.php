@@ -24,12 +24,12 @@ if(isset($_POST['getuser'])){
             header("Location: ../../Admin/AdminFunctions/Admin.php");
         }else{
             $_SESSION['loginUnSucess'] = 1;
-            header("Location: ../../Admin/AdminLogin.login.php");
+            header("Location: ../../Admin/AdminLogin/login.php");
         }
 
     }else{
         $_SESSION['loginUnSucess'] = 1;
-        header("Location: ../../Admin/AdminLogin.login.php");
+        header("Location: ../../Admin/AdminLogin/login.php");
     }
 
 }

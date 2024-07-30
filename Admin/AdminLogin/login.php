@@ -100,7 +100,16 @@ require_once '../../BackEnd/DB/db.conn.php';
 
 	  <?php
 		
-		
+		if($_SESSION['loginUnSucess'] == 1){
+			echo '<script>
+                Swal.fire({
+					icon: "error",
+					title: "Oops...",
+					text: "Something went wrong!",
+				});
+                </script>';
+				$_SESSION['loginUnSucess'] = null;
+		}
 
 	   ?>
 
