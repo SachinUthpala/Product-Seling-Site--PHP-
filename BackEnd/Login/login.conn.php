@@ -16,13 +16,13 @@ if(isset($_POST['getuser'])){
         $hashedPassword = $row['userPassword'];
 
         if(password_verify($password, $hashedPassword)){
-            echo "Login successful";
+            header("Location: ../../Admin/AdminFunctions/Admin.php");
         }else{
-            echo "Incorrect password";
+            
         }
 
     }else{
-        echo "user not exists";
+        
     }
 
 }
