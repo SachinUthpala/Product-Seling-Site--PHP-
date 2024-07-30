@@ -1,14 +1,14 @@
 <?php
 
 session_start();
-require_once '../../BackEnd/DB/db.conn.php';
+require_once '../../../BackEnd/DB/db.conn.php';
 
 $userName = $_SESSION['userName'] ;
 $userMail = $_SESSION['userMail'] ;
 $userAccess = $_SESSION['AdminType'] ;
 
 if(!$userName || !$userMail){
-  header('Location: ../../index.html');
+  header('Location: ../../../index.html');
   exit;
 }
 
@@ -28,12 +28,12 @@ if(!$userName || !$userMail){
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>East-link Admin Panel</title>
   <!-- General CSS Files -->
-  <link rel="stylesheet" href="assets/css/app.min.css">
+  <link rel="stylesheet" href="../assets/css/app.min.css">
   <!-- Template CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
   <!-- Custom style CSS -->
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
 </head>
 
 <body>
@@ -221,12 +221,12 @@ if(!$userName || !$userMail){
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
-            <li class="dropdown active">
+            <li class="dropdown">
               <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
 
             <!-- show all products -->
-            <li class="dropdown">
+            <li class="dropdown ">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>ALL Products</span></a>
               <ul class="dropdown-menu">
@@ -258,12 +258,12 @@ if(!$userName || !$userMail){
            
             <li class="menu-header">Products Changes</li>
             <!-- add product -->
-            <li class="dropdown">
+            <li class="dropdown active">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="shopping-bag"></i><span>Add Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li><a class="nav-link" href="./AddItems/EthanetSwitch.php">Ethernet Switches</a></li>
+                <li><a class="nav-link" href="#">Ethernet Switches</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
@@ -802,15 +802,15 @@ if(!$userName || !$userMail){
     </div>
   </div>
   <!-- General JS Scripts -->
-  <script src="assets/js/app.min.js"></script>
+  <script src="../assets/js/app.min.js"></script>
   <!-- JS Libraies -->
-  <script src="assets/bundles/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/bundles/apexcharts/apexcharts.min.js"></script>
   <!-- Page Specific JS File -->
-  <script src="assets/js/page/index.js"></script>
+  <script src="../assets/js/page/index.js"></script>
   <!-- Template JS File -->
-  <script src="assets/js/scripts.js"></script>
+  <script src="../assets/js/scripts.js"></script>
   <!-- Custom JS File -->
-  <script src="assets/js/custom.js"></script>
+  <script src="../assets/js/custom.js"></script>
 
 
 

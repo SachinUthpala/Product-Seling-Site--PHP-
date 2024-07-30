@@ -1418,70 +1418,7 @@
     </div>
 
   </style>
-  <script>
-    const showLevel01 = () => {
-      const level01npoe_header = document.getElementById("level01Npoe_header");
-      const level01poe_header = document.getElementById("level01poe_header");
-      const level01npoe = document.getElementById("level01Npoe");
-      const level01poe = document.getElementById("level01poe");
-      const cisco = document.getElementById("cisco");
 
-      level01poe.classList.add("showDiv");
-      level01poe.classList.remove("hideDiv");
-      level01npoe.classList.add("showDiv");
-      level01npoe.classList.remove("hideDiv");
-
-      level01poe_header.classList.add("showDiv");
-      level01poe_header.classList.remove("hideDiv");
-      level01npoe_header.classList.add("showDiv");
-      level01npoe_header.classList.remove("hideDiv");
-
-      cisco.classList.remove("showDiv");
-      cisco.classList.add("hideDiv");
-    }
-
-    const showCisco = () => {
-      const cisco = document.getElementById("cisco");
-      const level01npoe = document.getElementById("level01Npoe");
-      const level01poe = document.getElementById("level01poe");
-
-      const level01npoe_header = document.getElementById("level01Npoe_header");
-      const level01poe_header = document.getElementById("level01poe_header");
-
-      cisco.classList.add("showDiv");
-      cisco.classList.remove("hideDiv");
-      level01npoe.classList.remove("showDiv");
-      level01npoe.classList.add("hideDiv");
-      level01poe.classList.remove("showDiv");
-      level01poe.classList.add("hideDiv");
-
-      level01npoe_header.classList.remove("showDiv");
-      level01npoe_header.classList.add("hideDiv");
-      level01poe_header.classList.remove("showDiv");
-      level01poe_header.classList.add("hideDiv");
-    }
-
-    const showAll = () => {
-      const level01npoe_header = document.getElementById("level01Npoe_header");
-      const level01poe_header = document.getElementById("level01poe_header");
-      const level01npoe = document.getElementById("level01Npoe");
-      const level01poe = document.getElementById("level01poe");
-      const cisco = document.getElementById("cisco");
-
-      level01npoe.classList.add("showDiv");
-      level01npoe.classList.remove("hideDiv");
-      level01poe.classList.add("showDiv");
-      level01poe.classList.remove("hideDiv");
-
-      level01npoe_header.classList.add("showDiv");
-      level01npoe_header.classList.remove("hideDiv");
-      level01poe_header.classList.add("showDiv");
-      level01poe_header.classList.remove("hideDiv");
-
-      cisco.classList.add("showDiv");
-      cisco.classList.remove("hideDiv");
-    }
-  </script>
 
     <!-- 
         java script
@@ -1491,5 +1428,36 @@
         animation js
     -->
     <script src="../../JavaScripts/animation.js"></script>
+
+        <!-- 
+        sweet alert
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      async function  AdminLogin(){
+           const { value: password } = await Swal.fire({
+           title: "Enter your password",
+           input: "password",
+           inputLabel: "Password",
+           inputPlaceholder: "Enter your password",
+           inputAttributes: {
+               maxlength: "100",
+               autocapitalize: "off",
+               autocorrect: "off"
+           }
+           });
+           if (password === "admin@2024") {
+
+               location.href="./Admin/AdminLogin/login.php";
+           }else{
+               Swal.fire({
+               icon: "error",
+               title: "Oops...",
+               text: "Provide Correct Password To Continive this Task !",
+               });
+           }
+       }
+   </script>
   </body>
 </html>
