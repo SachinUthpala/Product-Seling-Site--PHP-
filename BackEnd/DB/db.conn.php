@@ -1,8 +1,8 @@
 <?php 
 
 $serverName = "localhost"; // Remove 'https://' and any protocol prefixes
-$userName = "demo";
-$password = "iRoDUi8QoZgQIYs";
+$userName = ""; //demo
+$password = ""; //iRoDUi8QoZgQIYs
 $dbName = "ea_web_admin";
 
 try {
