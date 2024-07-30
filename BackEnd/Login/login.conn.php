@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require_once "../DB/db.conn.php";
 
 if(isset($_POST['getuser'])){

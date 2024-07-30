@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+require_once '../../BackEnd/DB/db.conn.php';
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,6 +92,17 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+
+
+	  <!-- sweet alert js -->
+	  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+	  <?php
+		
+		
+
+	   ?>
 
 </body>
 </html>
