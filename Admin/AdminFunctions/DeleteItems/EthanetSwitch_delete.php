@@ -92,7 +92,7 @@ $total_items_all = $result_all['total_items'];
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <?php
 
-    if($_SESSION['item_Added'] == 1){
+    if($_SESSION['item_deleted'] == 1){
       echo '<script>
         Swal.fire({
           icon: "success",
@@ -101,7 +101,7 @@ $total_items_all = $result_all['total_items'];
           timer: 1500
         });
       </script>';
-      $_SESSION['item_Added'] = null ;
+      $_SESSION['item_deleted'] = null ;
     }
 
   ?>
@@ -519,7 +519,7 @@ $total_items_all = $result_all['total_items'];
                             <td><?php echo $items['poeType']; ?></td>
                             <td><?php echo $items['company']; ?></td>
                             <td>
-                                <form action="#" method="post">
+                                <form action="../../../BackEnd/deleteItems/EthanetSwitch_delete.php" method="post">
                                     <input type="hidden" name="itemId" value="<?php echo $items['itemId']; ?>">
                                     <input type="submit" name="delete" value="Delete" class="btn btn-primary">
                                 </form>
