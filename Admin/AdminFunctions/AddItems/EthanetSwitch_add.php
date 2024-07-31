@@ -274,7 +274,7 @@ $total_items_all = $result_all['total_items'];
                   data-feather="alert-triangle"></i><span>Delete Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li><a class="nav-link" href="#">Ethernet Switches</a></li>
+                <li><a class="nav-link" href="../DeleteItems/EthanetSwitch_delete.php">Ethernet Switches</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
@@ -428,7 +428,7 @@ $total_items_all = $result_all['total_items'];
                         <div class="card-content">
                           <h5 class="font-15">TR-SEVER</h5>
                           <h2 class="mb-3 font-18"><?php echo $total_items_TRANSCEIVERS ; ?></h2>
-                          <p class="mb-0"><span class="col-green">TRANSCEIVER</span></p>
+                          <p class="mb-0"><span class="col-green">TR-SEVER</span></p>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">

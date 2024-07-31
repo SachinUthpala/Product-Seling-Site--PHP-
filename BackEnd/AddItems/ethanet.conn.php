@@ -44,7 +44,7 @@ if(isset($_POST['add'])){
             $stmt->execute();
 
             $_SESSION['item_Added'] = 1;
-            header("Location: ../../Admin/AdminFunctions/AddItems/EthanetSwitch.php");
+            header("Location: ../../Admin/AdminFunctions/AddItems/EthanetSwitch_add.php");
             
         }
     }
