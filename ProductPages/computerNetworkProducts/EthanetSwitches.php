@@ -479,7 +479,7 @@ session_start();
             <p>ETHERNET SWITCHES - GIGABIT ETHERNET - NON POE</p>
           </div>
 
-          <div class="product-items" id="level01Npoe">
+          <div class="product-items" >
 
             <?php
               // fetching data from database
@@ -526,7 +526,6 @@ session_start();
             $sql_GIG_PE= "SELECT * FROM `ethanet_switches` WHERE poeType = 'GIG_PE' and company = 'LEVEL_ONE'";
             $stmt_GIG_PE = $conn->prepare($sql_GIG_PE);
             $stmt_GIG_PE->execute();
-            $result_GIG_PE = $stmt_GIG_PE->fetch(PDO::FETCH_ASSOC);
 
           ?>
 
@@ -534,7 +533,7 @@ session_start();
             <p>ETHERNET SWITCHES - GIGABIT ETHERNET - POE</p>
           </div>
 
-          <div class="product-items" id="level01poe">
+          <div class="product-items" >
             
             <?php while($result_GIG_PE = $stmt_GIG_PE->fetch(PDO::FETCH_ASSOC)){ ?>
             <!-- ----------------------------- -->
@@ -567,12 +566,53 @@ session_start();
             <?php }?>
             <!-- ----------------------------- -->
 
-
-
           </div>
 
           <div class="product-header" id="level01poe_header"  >
             <p>Ethernet switches - Fast Ethernet - Non PoE</p>
+          </div>
+
+
+          <div class="product-items" >
+            <?php
+            
+            $sql_FE_NPE= "SELECT * FROM `ethanet_switches` WHERE poeType = 'FE_NPE' and company = 'LEVEL_ONE'";
+            $stmt_FE_NPE = $conn->prepare($sql_FE_NPE);
+            $stmt_FE_NPE->execute();
+            $result_FE_NPE = $stmt_FE_NPE->fetch(PDO::FETCH_ASSOC);
+            
+            ?>
+            
+            <!-- ----------------------------- -->
+            <div class="product-card">
+              <div class='main'>
+                <img class='tokenImage' src="../../Images/Products/Ethanet_Switches/GEP-0823.png" alt="product" />
+                <h2>GEP-0823</h2>
+                <p class='description'>8-Port Gigabit PoE Switch, 802.3at/af PoE, 120W</p>
+                <p>Order No : 62803</p>
+                <br>
+                <div class='tokenInfo'>
+                  <div class="price">
+                    <a href="https://www.level1.com/level1_en/productpdf/download/file/id/10331/name/GEP-0823%252C_8-Port_Gigabit_PoE_Switch%252C_802.3ataf_PoE%252C_120W.pdf/" target=" ">Know More ...</a>
+                  </div>
+                  <div class="duration">
+                      ➕
+                  </div>
+                </div>
+                <br>
+                <hr />
+                <div class='creator'>
+                  <div class='wrapper'>
+                    <img src="../../Images/Web/brands/level01.png" alt="Creator" />
+                  </div>
+                  <p><ins>Product of</ins> Level One</p>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- ----------------------------- -->
+
           </div>
 
           
