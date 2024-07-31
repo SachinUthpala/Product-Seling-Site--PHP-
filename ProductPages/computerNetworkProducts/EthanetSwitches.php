@@ -493,10 +493,10 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card" >
               <div class='main'>
-                <img class='tokenImage' src="../../Images/Products/Ethanet_Switches/GEU-0523.png" alt="product" />
-                <h2>GEU-0523</h2>
-                <p class='description'>5-Port Gigabit Switch</p>
-                <p>Order No : 62226</p>
+                <img class='tokenImage' src="<?php echo '../../'.$result_GIG_NPE['image'];  ?>" alt="product" />
+                <h2><?php echo $result_GIG_NPE['itemCode']; ?></h2>
+                <p class='description'><?php echo $result_GIG_NPE['discription']; ?></p>
+                <p>Order No : <?php echo $result_GIG_NPE['orderNo']; ?></p>
                 <br>
                 <div class='tokenInfo'>
                   <div class="price">
@@ -539,14 +539,14 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card">
               <div class='main'>
-                <img class='tokenImage' src="../../Images/Products/Ethanet_Switches/GEP-0823.png" alt="product" />
-                <h2>GEP-0823</h2>
-                <p class='description'>8-Port Gigabit PoE Switch, 802.3at/af PoE, 120W</p>
-                <p>Order No : 62803</p>
+                <img class='tokenImage' src="<?php echo '../../'.$result_GIG_PE['image']; ?>" alt="product" />
+                <h2><?php echo $result_GIG_PE['itemCode']; ?></h2>
+                <p class='description'><?php echo $result_GIG_PE['discription']; ?></p>
+                <p>Order No : <?php echo $result_GIG_PE['orderNo']; ?></p>
                 <br>
                 <div class='tokenInfo'>
                   <div class="price">
-                    <a href="https://www.level1.com/level1_en/productpdf/download/file/id/10331/name/GEP-0823%252C_8-Port_Gigabit_PoE_Switch%252C_802.3ataf_PoE%252C_120W.pdf/" target=" ">Know More ...</a>
+                    <a href="<?php echo $result_GIG_PE['tecnicalDocument']; ?>" target=" ">Know More ...</a>
                   </div>
                   <div class="duration">
                       ➕
