@@ -521,7 +521,7 @@ $total_items_all = $result_all['total_items'];
                             <td>
                                 <form action="#" method="post">
                                     <input type="hidden" name="itemId" value="<?php echo $items['itemId']; ?>">
-                                    <input type="submit" value="Delete" class="btn btn-primary">
+                                    <input type="submit" name="delete" value="Delete" class="btn btn-primary">
                                 </form>
                             </td>
                           </tr>
