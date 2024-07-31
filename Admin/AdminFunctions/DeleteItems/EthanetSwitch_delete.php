@@ -513,14 +513,14 @@ $total_items_all = $result_all['total_items'];
                             <td><?php echo $items['itemCode']; ?></td>
                             <td><?php echo $items['orderNo']; ?></td>
                             <td>
-                              <img alt="image" src="a<?php echo $items['image']; ?>" width="35">
+                              <img alt="image" src="<?php echo "../../../".$items['image']; ?>" width="35">
                             </td>
-                            <td><?php echo $items['image']; ?></td>
-                            <td><?php echo $items['image']; ?></td>
-                            <td><?php echo $items['image']; ?></td>
+                            <td><?php echo $items['discription']; ?></td>
+                            <td><?php echo $items['poeType']; ?></td>
+                            <td><?php echo $items['company']; ?></td>
                             <td>
                                 <form action="#" method="post">
-                                    <input type="hidden" name="itemId" value="<?php echo $items['image']; ?>">
+                                    <input type="hidden" name="itemId" value="<?php echo $items['itemId']; ?>">
                                     <input type="submit" value="Delete" class="btn btn-primary">
                                 </form>
                             </td>
