@@ -579,10 +579,11 @@ session_start();
             $sql_FE_NPE= "SELECT * FROM `ethanet_switches` WHERE poeType = 'FE_NPE' and company = 'LEVEL_ONE'";
             $stmt_FE_NPE = $conn->prepare($sql_FE_NPE);
             $stmt_FE_NPE->execute();
-            $result_FE_NPE = $stmt_FE_NPE->fetch(PDO::FETCH_ASSOC);
+
             
             ?>
             
+            <?php while($result_FE_NPE = $stmt_FE_NPE->fetch(PDO::FETCH_ASSOC)){ ?>
             <!-- ----------------------------- -->
             <div class="product-card">
               <div class='main'>
@@ -609,6 +610,109 @@ session_start();
                 </div>
               </div>
             </div>
+
+            <?php }?>
+
+
+            <!-- ----------------------------- -->
+
+          </div>
+
+          <div class="product-header" id="level01poe_header"  >
+            <p>TRANSCEIVERS</p>
+          </div>
+
+          <div class="product-items" >
+            <?php
+            
+            $sql_FE_NP_LE_PEE= "SELECT * FROM `ethanet_switches` WHERE poeType = 'FE_PE' and company = 'LEVEL_ONE'";
+            $stmt_FE_NPE_LE_PE = $conn->prepare($sql_FE_NPE_LE_PE);
+            $stmt_FE_NPE_LE_PE->execute();
+
+            
+            ?>
+            
+            <?php while($result_FE_NPE_LE_PE = $stmt_FE_NPE_LE_PE->fetch(PDO::FETCH_ASSOC)){ ?>
+            <!-- ----------------------------- -->
+            <div class="product-card">
+              <div class='main'>
+                <img class='tokenImage' src="../../Images/Products/Ethanet_Switches/GEP-0823.png" alt="product" />
+                <h2>GEP-0823</h2>
+                <p class='description'>8-Port Gigabit PoE Switch, 802.3at/af PoE, 120W</p>
+                <p>Order No : 62803</p>
+                <br>
+                <div class='tokenInfo'>
+                  <div class="price">
+                    <a href="https://www.level1.com/level1_en/productpdf/download/file/id/10331/name/GEP-0823%252C_8-Port_Gigabit_PoE_Switch%252C_802.3ataf_PoE%252C_120W.pdf/" target=" ">Know More ...</a>
+                  </div>
+                  <div class="duration">
+                      ➕
+                  </div>
+                </div>
+                <br>
+                <hr />
+                <div class='creator'>
+                  <div class='wrapper'>
+                    <img src="../../Images/Web/brands/level01.png" alt="Creator" />
+                  </div>
+                  <p><ins>Product of</ins> Level One</p>
+                </div>
+              </div>
+            </div>
+
+            <?php }?>
+
+
+            <!-- ----------------------------- -->
+
+          </div>
+          
+
+          <div class="product-header" id="level01poe_header"  >
+            <p>Ethernet switches - Fast Ethernet - PoE</p>
+          </div>
+
+          <div class="product-items" >
+            <?php
+            
+            $sql_TRANSCEIVERS= "SELECT COUNT(*) as total_items_TRANSCEIVERS FROM `ethanet_switches` WHERE poeType = 'TRANSCEIVERS'";
+            $stmt_TRANSCEIVERS = $conn->prepare($sql_TRANSCEIVERS);
+            $stmt_TRANSCEIVERS->execute();
+            
+
+
+            
+            ?>
+            
+            <?php while($result_TRANSCEIVERS= $stmt_TRANSCEIVERS->fetch(PDO::FETCH_ASSOC)){ ?>
+            <!-- ----------------------------- -->
+            <div class="product-card">
+              <div class='main'>
+                <img class='tokenImage' src="../../Images/Products/Ethanet_Switches/GEP-0823.png" alt="product" />
+                <h2>GEP-0823</h2>
+                <p class='description'>8-Port Gigabit PoE Switch, 802.3at/af PoE, 120W</p>
+                <p>Order No : 62803</p>
+                <br>
+                <div class='tokenInfo'>
+                  <div class="price">
+                    <a href="https://www.level1.com/level1_en/productpdf/download/file/id/10331/name/GEP-0823%252C_8-Port_Gigabit_PoE_Switch%252C_802.3ataf_PoE%252C_120W.pdf/" target=" ">Know More ...</a>
+                  </div>
+                  <div class="duration">
+                      ➕
+                  </div>
+                </div>
+                <br>
+                <hr />
+                <div class='creator'>
+                  <div class='wrapper'>
+                    <img src="../../Images/Web/brands/level01.png" alt="Creator" />
+                  </div>
+                  <p><ins>Product of</ins> Level One</p>
+                </div>
+              </div>
+            </div>
+
+            <?php }?>
 
 
             <!-- ----------------------------- -->
