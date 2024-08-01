@@ -493,7 +493,7 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card" >
               <div class='main'>
-                <img class='tokenImage' src="<?php echo '../../'.$result_GIG_NPE['image'];  ?>" alt="product" />
+                <img class='tokenImage' src="<?php echo '../../'.$result_GIG_NPE['image'];  ?>" width="300px" alt="product" />
                 <h2><?php echo $result_GIG_NPE['itemCode']; ?></h2>
                 <p class='description'><?php echo $result_GIG_NPE['discription']; ?></p>
                 <p>Order No : <?php echo $result_GIG_NPE['orderNo']; ?></p>
@@ -539,7 +539,7 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card">
               <div class='main'>
-                <img class='tokenImage' src="<?php echo '../../'.$result_GIG_PE['image']; ?>" alt="product" />
+                <img class='tokenImage' src="<?php echo '../../'.$result_GIG_PE['image']; ?>" width="300px" alt="product" />
                 <h2><?php echo $result_GIG_PE['itemCode']; ?></h2>
                 <p class='description'><?php echo $result_GIG_PE['discription']; ?></p>
                 <p>Order No : <?php echo $result_GIG_PE['orderNo']; ?></p>
@@ -587,7 +587,7 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card">
               <div class='main'>
-                <img class='tokenImage' src="<?php echo '../../'.$result_FE_NPE['image']; ?>" alt="product" />
+                <img class='tokenImage' src="<?php echo '../../'.$result_FE_NPE['image']; ?>" width="300px" alt="product" />
                 <h2><?php echo $result_FE_NPE['itemCode']; ?></h2>
                 <p class='description'><?php echo $result_FE_NPE['discription']; ?></p>
                 <p>Order No : <?php echo $result_FE_NPE['itemCode']; ?></p>
@@ -636,7 +636,7 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card">
               <div class='main'>
-                <img class='tokenImage' src="<?php echo '../../'.$result_FE_NPE['image']; ?>" alt="product" />
+                <img class='tokenImage' src="<?php echo '../../'.$result_FE_NPE['image']; ?>" width="300px" alt="product" />
                 <h2><?php echo $result_FE_NPE['itemCode']; ?></h2>
                 <p class='description'><?php echo $result_FE_NPE['discription']; ?></p>
                 <p>Order No : <?php echo $result_FE_NPE['itemCode']; ?></p>
@@ -685,7 +685,7 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card">
               <div class='main'>
-                <img class='tokenImage' src="<?php echo '../../'.$result_FE_NPE_TRANSCEIVERS['image']; ?>" alt="product" />
+                <img class='tokenImage' src="<?php echo '../../'.$result_FE_NPE_TRANSCEIVERS['image']; ?>" width="300px" alt="product" />
                 <h2><?php echo $result_FE_NPE_TRANSCEIVERS['itemCode']; ?></h2>
                 <p class='description'><?php echo $result_FE_NPE_TRANSCEIVERS['discription']; ?></p>
                 <p>Order No : <?php echo $result_FE_NPE_TRANSCEIVERS['itemCode']; ?></p>
@@ -738,7 +738,7 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card">
               <div class='main'>
-                <img class='tokenImage' src=".<?php echo '../../'.$result_gig_NPE_cisco['image']; ?>" alt="product" />
+                <img class='tokenImage' src="<?php echo '../../'.$result_gig_NPE_cisco['image']; ?>" width="300px" alt="product" />
                 <h2><?php echo $result_gig_NPE_cisco['itemCode']; ?></h2>
                 <p class='description'><?php echo $result_gig_NPE_cisco['discription']; ?></p>
                 <p>Order No : <?php echo $result_gig_NPE_cisco['orderNo']; ?></p>
@@ -748,16 +748,16 @@ session_start();
                     <a href="<?php echo $result_gig_NPE_cisco['tecnicalDocument']; ?>" target=" ">Know More ...</a>
                   </div>
                   <div class="duration">
-                      ➕
+                      ➕22
                   </div>
                 </div>
                 <br>
                 <hr />
                 <div class='creator'>
                   <div class='wrapper'>
-                    <img src="../../Images/Web/brands/level01.png" alt="Creator" />
+                    <img src="../../Images/Web/brands/cisco.png" alt="Creator" />
                   </div>
-                  <p><ins>Product of</ins> Level One</p>
+                  <p><ins>Product of</ins> CISCO</p>
                 </div>
               </div>
             </div>
@@ -787,7 +787,7 @@ session_start();
             <!-- ----------------------------- -->
             <div class="product-card">
               <div class='main'>
-                <img class='tokenImage' src="<?php echo '../../'.$result_gig_PE_cisco['image']; ?>" alt="product" />
+                <img class='tokenImage' src="<?php echo '../../'.$result_gig_PE_cisco['image']; ?>" width="300px" alt="product" />
                 <h2><?php echo $result_gig_PE_cisco['itemCode']; ?></h2>
                 <p class='description'><?php echo $result_gig_PE_cisco['discription']; ?></p>
                 <p>Order No : <?php echo $result_gig_PE_cisco['orderNo']; ?></p>
@@ -804,9 +804,9 @@ session_start();
                 <hr />
                 <div class='creator'>
                   <div class='wrapper'>
-                    <img src="../../Images/Web/brands/level01.png" alt="Creator" />
+                    <img src="../../Images/Web/brands/cisco.png" alt="Creator" />
                   </div>
-                  <p><ins>Product of</ins> Level One</p>
+                  <p><ins>Product of</ins> CISCO</p>
                 </div>
               </div>
             </div>
