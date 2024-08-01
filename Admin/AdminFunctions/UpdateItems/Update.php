@@ -13,53 +13,15 @@ if(!$userName || !$userMail){
 }
 
 
-// fetching data from database
-$sql_GIG_NPE = "SELECT COUNT(*) as total_items FROM `ethanet_switches` WHERE poeType = 'GIG_NPE'";
-$stmt_GIG_NPE = $conn->prepare($sql_GIG_NPE);
-$stmt_GIG_NPE->execute();
-$result_GIG_NPE = $stmt_GIG_NPE->fetch(PDO::FETCH_ASSOC);
-$total_items_GIG_NPE = $result_GIG_NPE['total_items'];
+if($_POST['update']){
+  $itemId = $_POST['itemId'];
+}
 
-
-$sql_GIG_PE= "SELECT COUNT(*) as total_items_PE FROM `ethanet_switches` WHERE poeType = 'GIG_PE'";
-$stmt_GIG_PE = $conn->prepare($sql_GIG_PE);
-$stmt_GIG_PE->execute();
-$result_GIG_PE = $stmt_GIG_PE->fetch(PDO::FETCH_ASSOC);
-$total_items_GIG_PE = $result_GIG_PE['total_items_PE'];
-
-$sql_FE_NPE= "SELECT COUNT(*) as total_items_FE_NPE FROM `ethanet_switches` WHERE poeType = 'FE_NPE'";
-$stmt_FE_NPE = $conn->prepare($sql_FE_NPE);
-$stmt_FE_NPE->execute();
-$result_FE_NPE = $stmt_FE_NPE->fetch(PDO::FETCH_ASSOC);
-$total_items_FE_NPE = $result_FE_NPE['total_items_FE_NPE'];
-
-
-
-
-$sql_FE_PE= "SELECT COUNT(*) as total_itemsFE_PE FROM `ethanet_switches` WHERE poeType = 'FE_PE'";
-$stmt_FE_PE= $conn->prepare($sql_FE_PE);
-$stmt_FE_PE->execute();
-$result_FE_PE = $stmt_FE_PE->fetch(PDO::FETCH_ASSOC);
-$total_items_FE_PE = $result_FE_PE['total_itemsFE_PE'];
-
-
-
-
-$sql_TRANSCEIVERS= "SELECT COUNT(*) as total_items_TRANSCEIVERS FROM `ethanet_switches` WHERE poeType = 'TRANSCEIVERS'";
-$stmt_TRANSCEIVERS = $conn->prepare($sql_TRANSCEIVERS);
-$stmt_TRANSCEIVERS->execute();
-$result_TRANSCEIVERS= $stmt_TRANSCEIVERS->fetch(PDO::FETCH_ASSOC);
-$total_items_TRANSCEIVERS = $result_TRANSCEIVERS['total_items_TRANSCEIVERS'];
-
-
-$all_sql = "SELECT COUNT(*) as total_items FROM `ethanet_switches`";
-$sqmtp_all = $conn->prepare($all_sql);
-$sqmtp_all->execute();
-$result_all = $sqmtp_all->fetch(PDO::FETCH_ASSOC);
-$total_items_all = $result_all['total_items'];
-
-
-
+$sql = "SELECT * FROM `ethanet_switches` WHERE `itemId` = :itemId";
+$smtp =$conn->prepare($sql);
+$smtp->bindParam(':itemId', $itemId);
+$smtp->execute();
+$result = $smtp->fetch(PDO::FETCH_ASSOC);
 
 
 
@@ -110,33 +72,35 @@ $total_items_all = $result_all['total_items'];
                     <div class="card-header">
                       <h4>Update Ethernet Switch</h4>
                     </div>
+                    <input type="hidden" class="form-control" value="<?php echo $result['itemId']; ?>" name="itemId" required="">
                     <div class="card-body">
                       <div class="form-group">
                         <label>Item Code</label>
-                        <input type="text" class="form-control" name="itemcode" required="">
+                        <input type="text" class="form-control" value="<?php echo $result['itemCode']; ?>" name="itemcode" required="">
                         
                       </div>
                       <div class="form-group">
                         <label>Order No</label>
-                        <input type="text" class="form-control" name="orderNo" required="">
+                        <input type="text" class="form-control" value="<?php echo $result['orderNo']; ?>"  name="orderNo" required="">
                         
                       </div>
                       
                       <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" name="discription" required=""></textarea>
+                        <textarea class="form-control" name="discription" value="<?php echo $result['discription']; ?>"  required=""></textarea>
                         
                       </div>
 
                       <div class="form-group">
                         <label>More Details</label>
-                        <textarea class="form-control" name="moreDetails" required=""></textarea>
+                        <textarea class="form-control" name="moreDetails" value="<?php echo $result['moreDetails']; ?>"  required=""></textarea>
                         
                       </div>
 
                       <div class="form-group">
                         <label>Select <code>.POE Type / Transceivers</code></label>
                         <select class="form-control form-control-lg" name="poe">
+                          <option  value="<?php echo $result['poeType']; ?>"><?php echo $result['poeType']; ?></option>
                             <option value="GIG_NPE">GIGABIT ETHERNET - NON POE</option>
                             <option value="GIG_PE">GIGABIT ETHERNET - POE</option>
                             <option value="FE_NPE">FAST ETHERNET - NON POE</option>
@@ -148,26 +112,25 @@ $total_items_all = $result_all['total_items'];
                       <div class="form-group">
                         <label>Select <code>.Company</code></label>
                         <select class="form-control form-control-lg" name="company">
+                        <option  value="<?php echo $result['company']; ?>"><?php echo $result['company']; ?></option>
                             <option value="LEVEL_ONE">LEVEL ONE</option>
                             <option value="CISCO">CISCO</option>
                         </select>
 
                       </div>
 
-                      <div class="form-group">
-                        <label>Upload Image</label>
-                        <input type="file" class="form-control" name="image" required="">
-                      </div>
+                      
 
                       <div class="form-group">
                         <label>Technical Document Link</label>
-                        <input type="text" class="form-control" name="technical" >
+                        <input type="text" class="form-control" name="technical" value="<?php echo $result['tecnicalDocument']; ?>" >
                         
                       </div>
 
                     </div>
                     <div class="card-footer text-right">
-                      <button class="btn btn-primary" name="add">Submit</button>
+                      <button class="btn btn-primary" name="add">Update</button>
+                      <button class="btn btn-primary" name="cancel">Cancel</button>
                     </div>
                   </form>
           </div>
@@ -176,13 +139,7 @@ $total_items_all = $result_all['total_items'];
         
       </div>
 
-      <footer class="main-footer">
-        <div class="footer-left">
-          <a href="https://github.com/SachinUthpala">Sachin Gunasekara</a></a>
-        </div>
-        <div class="footer-right">
-        </div>
-      </footer>
+
     </div>
   </div>
   <!-- General JS Scripts -->
