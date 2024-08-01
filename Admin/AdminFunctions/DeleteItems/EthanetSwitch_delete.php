@@ -255,7 +255,7 @@ $total_items_all = $result_all['total_items'];
                   data-feather="feather"></i><span>Update Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li><a class="nav-link" href="#">Ethernet Switches</a></li>
+                <li><a class="nav-link" href="../UpdateItems//EthanetSwitch_update.php">Ethernet Switches</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
