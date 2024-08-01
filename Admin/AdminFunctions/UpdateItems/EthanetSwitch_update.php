@@ -519,9 +519,9 @@ $total_items_all = $result_all['total_items'];
                             <td><?php echo $items['poeType']; ?></td>
                             <td><?php echo $items['company']; ?></td>
                             <td>
-                                <form action="../../../BackEnd/deleteItems/EthanetSwitch_delete.php" method="post">
+                                <form action="./Update.php" method="post">
                                     <input type="hidden" name="itemId" value="<?php echo $items['itemId']; ?>">
-                                    <input type="submit" name="delete" value="Update" class="btn btn-primary">
+                                    <input type="submit" name="update" value="Update" class="btn btn-primary">
                                 </form>
                             </td>
                           </tr>
