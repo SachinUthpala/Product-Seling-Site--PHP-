@@ -68,7 +68,7 @@ $result = $smtp->fetch(PDO::FETCH_ASSOC);
       
 
         <div class="card">
-                  <form class="needs-validation" action="../../../BackEnd/AddItems/ethanet.conn.php" novalidate=""  enctype="multipart/form-data" method="post" >
+                  <form class="needs-validation" action="../../../BackEnd/updateItems/EthanetSwitch_update.php" novalidate=""  enctype="multipart/form-data" method="post" >
                     <div class="card-header">
                       <h4>Update Ethernet Switch</h4>
                     </div>
@@ -87,13 +87,13 @@ $result = $smtp->fetch(PDO::FETCH_ASSOC);
                       
                       <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" name="discription" value="<?php echo $result['discription']; ?>" placeholder="<?php echo $result['discription']; ?>"  required=""></textarea>
+                        <textarea class="form-control" name="discription" value="<?php echo $result['discription']; ?>" placeholder="<?php echo $result['discription']; ?>" ></textarea>
                         
                       </div>
 
                       <div class="form-group">
                         <label>More Details</label>
-                        <textarea class="form-control" name="moreDetails" value="<?php echo $result['moreDetails']; ?>" placeholder="<?php echo $result['moreDetails']; ?>"  required=""></textarea>
+                        <textarea class="form-control" name="moreDetails" value="<?php echo $result['moreDetails']; ?>" placeholder="<?php echo $result['moreDetails']; ?>" ></textarea>
                         
                       </div>
 
