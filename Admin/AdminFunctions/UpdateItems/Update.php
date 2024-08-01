@@ -87,13 +87,13 @@ $result = $smtp->fetch(PDO::FETCH_ASSOC);
                       
                       <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" name="discription" value="<?php echo $result['discription']; ?>"  required=""></textarea>
+                        <textarea class="form-control" name="discription" value="<?php echo $result['discription']; ?>" placeholder="<?php echo $result['discription']; ?>"  required=""></textarea>
                         
                       </div>
 
                       <div class="form-group">
                         <label>More Details</label>
-                        <textarea class="form-control" name="moreDetails" value="<?php echo $result['moreDetails']; ?>"  required=""></textarea>
+                        <textarea class="form-control" name="moreDetails" value="<?php echo $result['discription']; ?>" placeholder="<?php echo $result['discription']; ?>"  required=""></textarea>
                         
                       </div>
 
