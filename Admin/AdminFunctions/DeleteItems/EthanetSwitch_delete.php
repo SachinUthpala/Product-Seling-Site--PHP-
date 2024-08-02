@@ -96,7 +96,7 @@ $total_items_all = $result_all['total_items'];
       echo '<script>
         Swal.fire({
           icon: "success",
-          title: "Item Successfully Added",
+          title: "Item Deleted Successfully",
           showConfirmButton: false,
           timer: 1500
         });
