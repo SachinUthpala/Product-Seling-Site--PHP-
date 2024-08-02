@@ -521,7 +521,7 @@ $total_items_all = $result_all['total_items'];
                             <td>
                                 <form action="../../../BackEnd/deleteItems/EthanetSwitch_delete.php"  method="post" id="DeleteForm">
                                     <input type="hidden" name="itemId" value="<?php echo $items['itemId']; ?>">
-                                    <input type="button" name="delete" value="Delete" onclick="submitForm()" class="btn btn-primary">
+                                    <input type="submit" name="delete" value="Delete" class="btn btn-primary">
                                 </form>
                             </td>
                           </tr>
@@ -531,25 +531,7 @@ $total_items_all = $result_all['total_items'];
                           
                         </tbody>
 
-                        <script>
-                          
-                        const submitForm = () => {
-                          Swal.fire({
-                            title: "Are you sure?",
-                            text: "Do you Want to Delete This Item ?!",
-                            icon: "warning",
-                            showCancelButton: true,
-                            confirmButtonColor: "#3085d6",
-                            cancelButtonColor: "#d33",
-                            confirmButtonText: "Yes, delete it!"
-                          }).then((result) => {
-                            if (result.isConfirmed) {
-                              document.getElementById("DeleteForm").submit();
-                            }
-                          });
-                        }
-
-                        </script>
+                        
                       </table>
 
                     </div>
