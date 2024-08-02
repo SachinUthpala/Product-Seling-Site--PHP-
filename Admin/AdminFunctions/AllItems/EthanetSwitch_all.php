@@ -92,7 +92,7 @@ $total_items_all = $result_all['total_items'];
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <?php
 
-    if($_SESSION['item_Added'] == 1){
+    if($_SESSION['item_deleted'] == 1){
       echo '<script>
         Swal.fire({
           icon: "success",
@@ -101,7 +101,7 @@ $total_items_all = $result_all['total_items'];
           timer: 1500
         });
       </script>';
-      $_SESSION['item_Added'] = null ;
+      $_SESSION['item_deleted'] = null ;
     }
 
   ?>
@@ -199,12 +199,12 @@ $total_items_all = $result_all['total_items'];
             </li>
 
             <!-- show all products -->
-            <li class="dropdown ">
+            <li class="dropdown active ">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>ALL Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li><a class="nav-link" href="../AllItems/EthanetSwitch_all.php">Ethernet Switches</a></li>
+                <li  class="active"><a class="nav-link" href="#">Ethernet Switches</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
@@ -231,12 +231,12 @@ $total_items_all = $result_all['total_items'];
            
             <li class="menu-header">Products Changes</li>
             <!-- add product -->
-            <li class="dropdown active">
+            <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="shopping-bag"></i><span>Add Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li class="active"><a class="nav-link" href="#">Ethernet Switches</a></li>
+                <li><a class="nav-link" href="../AddItems/EthanetSwitch_add.php">Ethernet Switches</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
@@ -255,7 +255,7 @@ $total_items_all = $result_all['total_items'];
                   data-feather="feather"></i><span>Update Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li><a class="nav-link" href="../UpdateItems/EthanetSwitch_update.php">Ethernet Switches</a></li>
+                <li><a class="nav-link" href="../UpdateItems//EthanetSwitch_update.php">Ethernet Switches</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
@@ -321,6 +321,18 @@ $total_items_all = $result_all['total_items'];
           </ul>
         </aside>
       </div>
+
+      <!-- php code for retriew data -->
+       <?php
+
+            $n = 1;
+
+
+            $sql = "SELECT * FROM `ethanet_switches`";
+            $smtp = $conn->prepare($sql);
+            $smtp->execute();
+
+        ?>
 
       <!-- Main Content -->
       <div class="main-content">
@@ -466,73 +478,60 @@ $total_items_all = $result_all['total_items'];
             </div>
           </div>
 
-          <div class="card">
-                  <form class="needs-validation" action="../../../BackEnd/AddItems/ethanet.conn.php" novalidate=""  enctype="multipart/form-data" method="post" >
-                    <div class="card-header">
-                      <h4>Add Ethernet Switch</h4>
-                    </div>
-                    <div class="card-body">
-                      <div class="form-group">
-                        <label>Item Code</label>
-                        <input type="text" class="form-control" name="itemcode" required="">
-                        
-                      </div>
-                      <div class="form-group">
-                        <label>Order No</label>
-                        <input type="text" class="form-control" name="orderNo" required="">
-                        
-                      </div>
-                      
-                      <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control" name="discription" required=""></textarea>
-                        
-                      </div>
+          <!-- data table -->
+          <div class="section-body">
+          <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Basic DataTables</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
 
-                      <div class="form-group">
-                        <label>More Details</label>
-                        <textarea class="form-control" name="moreDetails" required=""></textarea>
-                        
-                      </div>
-
-                      <div class="form-group">
-                        <label>Select <code>.POE Type / Transceivers</code></label>
-                        <select class="form-control form-control-lg" name="poe">
-                            <option value="GIG_NPE">GIGABIT ETHERNET - NON POE</option>
-                            <option value="GIG_PE">GIGABIT ETHERNET - POE</option>
-                            <option value="FE_NPE">FAST ETHERNET - NON POE</option>
-                            <option value="FE_PE">FAST ETHERNET - POE</option>
-                            <option value="TRANSCEIVERS">TRANSCEIVERS</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group">
-                        <label>Select <code>.Company</code></label>
-                        <select class="form-control form-control-lg" name="company">
-                            <option value="LEVEL_ONE">LEVEL ONE</option>
-                            <option value="CISCO">CISCO</option>
-                        </select>
-
-                      </div>
-
-                      <div class="form-group">
-                        <label>Upload Image</label>
-                        <input type="file" class="form-control" name="image" required="">
-                      </div>
-
-                      <div class="form-group">
-                        <label>Technical Document Link</label>
-                        <input type="text" class="form-control" name="technical" >
-                        
-                      </div>
+                      <table class="table table-striped" id="table-1">
+                        <thead>
+                          <tr>
+                            <th class="text-center">
+                              No
+                            </th>
+                            <th>Item Code</th>
+                            <th>Order No</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th>Poe Type</th>
+                            <th>Company</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <?php while($items = $smtp->fetch(PDO::FETCH_ASSOC)){ ?>
+                          <tr>
+                            <td>
+                              <?php echo $n; ?>
+                            </td>
+                            <td><?php echo $items['itemCode']; ?></td>
+                            <td><?php echo $items['orderNo']; ?></td>
+                            <td>
+                              <img alt="image" src="<?php echo "../../../".$items['image']; ?>" width="35">
+                            </td>
+                            <td><?php echo $items['discription']; ?></td>
+                            <td><?php echo $items['poeType']; ?></td>
+                            <td><?php echo $items['company']; ?></td>
+                           
+                          </tr>
+                          <?php 
+                            $n++;
+                        } ?>
+                          
+                        </tbody>
+                      </table>
 
                     </div>
-                    <div class="card-footer text-right">
-                      <button class="btn btn-primary" name="add">Submit</button>
-                    </div>
-                  </form>
-          </div>
-
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
           
 
           
@@ -653,6 +652,15 @@ $total_items_all = $result_all['total_items'];
   <script src="../assets/js/scripts.js"></script>
   <!-- Custom JS File -->
   <script src="../assets/js/custom.js"></script>
+
+
+  <!-- JS Libraies -->
+  <script src="../assets/bundles/datatables/datatables.min.js"></script>
+  <script src="../assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="../assets/bundles/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Page Specific JS File -->
+  <script src="../assets/js/page/datatables.js"></script>
+
 
 
 
