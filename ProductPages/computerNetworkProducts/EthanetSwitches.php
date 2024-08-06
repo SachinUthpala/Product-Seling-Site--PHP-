@@ -438,38 +438,6 @@ session_start();
       </section>
  
 
-      <div class="containers eth-02" style="overflow: hidden;">
-          <div class="content">
-            <div class="content-card hiddenx">
-              <div class="icon">
-                <i class="fa fa-certificate" aria-hidden="true"></i>
-              </div>
-              <div class="contendiscription">
-                <h3>Certified Company</h3>
-                <p>Our company is ISO 9001 : 2015 Certified Company in Navala , SriLanka.</p>
-              </div>
-            </div>
-            <div class="content-card">
-              <div class="icon">
-                <i class="fa fa-check" aria-hidden="true"></i>
-              </div>
-              <div class="contendiscription">
-                <h3>Quality Products</h3>
-                <p>Our company is ISO 9001 : 2015 Certified Company in Navala , SriLanka.</p>
-              </div>
-            </div>
-            <div class="content-card hiddeny">
-              <div class="icon">
-                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-              </div>
-              <div class="contendiscription">
-                <h3>Reasonable Prices</h3>
-                <p>Our company is ISO 9001 : 2015 Certified Company in Navala , SriLanka.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
        
 
         <div class="products">
