@@ -191,13 +191,14 @@ main{
     z-index: 100000;
     left:1%;
     top: 88%;
-    padding: 12px 20px;
-    background-color: #fff;
+    padding: 10px 16px;
+    background-color: #ffffff;
     border-radius: 100%;
     cursor: pointer;
 }
 
-.top>img:hover{
+
+.top>i:hover{
     color: #ff000d ;
 }
 
