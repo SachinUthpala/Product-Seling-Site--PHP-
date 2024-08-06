@@ -13,7 +13,6 @@
     height: 100%;
     position: absolute;
     inset: 0 0 0 0;
-    background-color: #00000000;
 }
 .slider .list .item img{
     width: 100%;
