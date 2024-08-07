@@ -1,3 +1,12 @@
+<?php
+
+require_once '../../BackEnd/DB/db.conn.php';
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,13 +17,13 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./Styles/Navigation.css" />
-    <link rel="stylesheet" href="./Styles/Style.css" />
+    <link rel="stylesheet" href="../../Styles/Navigation.css" />
+    <link rel="stylesheet" href="../../Styles/Style.css" />
+    <link rel="stylesheet" href="../../Styles/Product.css">
     <!-- 
     animation css
     -->
-    <link rel="stylesheet" href="./Styles/animations.css" />
-    <link rel="stylesheet" href="./Styles/Slider.css">
+    <link rel="stylesheet" href="../../Styles/animations.css" />
     <title>East Link Engineering</title>
 
     <!-- 
@@ -35,11 +44,18 @@
     />
 
     <!-- tab icon -->
-    <link rel="icon" href="./Images/Web/EL LOGO.png" />
+    <link rel="icon" href="../../Images/Web/EL LOGO.png" />
 
-    <!-- font awsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Start of Tawk.to Script-->
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!--End of Tawk.to Script-->
 
+    <style>
+      #GEU-0523:target{
+        display: block;
+      }
+    </style>
   </head>
 
   <body>
@@ -56,7 +72,7 @@
         <input type="checkbox" name="" id="check" />
 
         <div class="logo-container">
-          <img src="./Images/Web/EL LOGO.png" alt="" />
+          <img src="../../Images/Web/EL LOGO.png" alt="" />
         </div>
 
         <!-- navigation link -->
@@ -64,29 +80,35 @@
           <div class="nav-links">
             <ul>
               <li class="nav-link" style="--i: 0.6s">
-                <a href="#">HOME</a>
+                <a href="../../index.html">HOME</a>
               </li>
 
               <li class="nav-link" style="--i: 0.85s">
-                <a href="#" ondblclick="location.href='./Products.html'">PRODUCTS</a>
+                <a href="#" ondblclick="location.href='./Products.html'">PRODUCTS<i class="fas fa-caret-down"></i></a>
                 <div class="dropdown">
                   <!-- sub menu -->
                   <ul>
                     <li class="dropdown-link">
                       <a href="#"
-                        >COMPUTER NETWORK PRODUCT</a>
+                        >COMPUTER NETWORK PRODUCT<i
+                          class="fas fa-caret-down"
+                        ></i
+                      ></a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
                             <a href="#"
-                              >ACTIVE NETWORK PRODUCTS</a>
+                              >ACTIVE NETWORK PRODUCTS<i
+                                class="fas fa-caret-down"
+                              ></i
+                            ></a>
                             <div class="dropdown second">
                               <ul>
                                 <li class="dropdown-link">
-                                  <a href="./ProductPages/computerNetworkProducts/EthanetSwitches.php">ETHERNET SWITCHES</a>
+                                  <a href="./EthanetSwitches.php">ETHERNET SWITCHES</a>
                                 </li>
                                 <li class="dropdown-link">
-                                  <a href="./ProductPages/computerNetworkProducts/NIC.php">NETWORK INTERFACE CARDS</a>
+                                  <a href="#">NETWORK INTERFACE CARDS</a>
                                 </li>
                                 <li class="dropdown-link">
                                   <a href="#">MEDIA CONVERTERS</a>
@@ -103,7 +125,10 @@
                           </li>
                           <li class="dropdown-link">
                             <a href="#"
-                              >PASSIVE NETWORK PRODUCTS</a>
+                              >PASSIVE NETWORK PRODUCTS<i
+                                class="fas fa-caret-down"
+                              ></i
+                            ></a>
                             <div class="dropdown second">
                               <ul>
                                 <li class="dropdown-link">
@@ -124,16 +149,22 @@
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >DATA CENTER/SERVER ROOM PRODUCTS</a>
+                        >DATA CENTER/SERVER ROOM PRODUCTS<i
+                          class="fas fa-caret-down"
+                        ></i
+                      ></a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
                             <a href="#"
-                              >19" SERVER RACKS & ACCESSORIES</a>
-                            <div class="dropdown second">
+                              >19" SERVER RACKS & ACCESSORIES<i
+                                class="fas fa-caret-down"
+                              ></i
+                            ></a>
+                           <div class="dropdown second">
                               <ul>
                                 <li class="dropdown-link">
-                                  <a href="./ProductPages/Racks/FreeStanding19.html">Free Standing 19” Racks</a>
+                                  <a href="../Racks/FreeStanding19.html">Free Standing 19” Racks</a>
                                 </li>
                                 <li class="dropdown-link">
                                   <a href="#">Wall Mounting 19” Racks</a>
@@ -187,7 +218,10 @@
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >CABLE MANAGEMENT PRODUCTS</a>
+                        >CABLE MANAGEMENT PRODUCTS<i
+                          class="fas fa-caret-down"
+                        ></i
+                      ></a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
@@ -198,7 +232,8 @@
                           </li>
                           <li class="dropdown-link">
                             <a href="#"
-                              >CABLE TRUNKING</a>
+                              >CABLE TRUNKING<i class="fas fa-caret-down"></i
+                            ></a>
                             <div class="dropdown second">
                               <ul>
                                 <li class="dropdown-link">
@@ -234,7 +269,10 @@
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >TELECOMMUNICATION PRODUCT</a>
+                        >TELECOMMUNICATION PRODUCT<i
+                          class="fas fa-caret-down"
+                        ></i
+                      ></a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
@@ -260,7 +298,8 @@
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >AUDIO/VIDEO PRODUCTS</a>
+                        >AUDIO/VIDEO PRODUCTS<i class="fas fa-caret-down"></i
+                      ></a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
@@ -305,7 +344,8 @@
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >OTHER PRODUCTS</a>
+                        >OTHER PRODUCTS<i class="fas fa-caret-down"></i
+                      ></a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
@@ -329,7 +369,7 @@
               </li>
 
               <li class="nav-link" style="--i: 0.85s">
-                <a href="#">SUPPORT</a>
+                <a href="#">SUPPORT<i class="fas fa-caret-down"></i></a>
                 <div class="dropdown">
                   <ul>
                     <li class="dropdown-link">
@@ -374,282 +414,49 @@
       top
       -->
     <div class="top" onclick="topFunction()" id="myBtn" title="Go to top">
-      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      <i class="fa fa-angle-double-up" aria-hidden="true"></i>
     </div>
 
-    <div class="slider">
-
-
-      <div class="list">
-
-          <div class="item">
-              <img src="./Images/Web/back04.jpg" alt="">
-
-              <div class="content">
-                  <div class="title" style="text-transform: uppercase;">East-Link</div>
-                  <div class="type">Engineering</div>
-                  <div class="description">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
-                  </div>
-                  
-              </div>
-          </div>
-
-          <div class="item">
-              <img src="./Images/Web/back03.jpg" alt="">
-
-              <div class="content">
-                  <div class="title" style="text-transform: uppercase;">East-Link</div>
-                  <div class="type">Engineering</div>
-                  <div class="description">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
-                  </div>
-                 
-              </div>
-          </div>
-
-          <div class="item">
-            <img src="./Images/Web/back04.jpg" alt="">
-
-            <div class="content">
-                <div class="title" style="text-transform: uppercase;">East-Link</div>
-                <div class="type">Engineering</div>
-                <div class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="item">
-          <img src="./Images/Web/back05.webp" alt="">
-
-          <div class="content">
-              <div class="title" style="text-transform: uppercase;">East-Link</div>
-              <div class="type">Engineering</div>
-              <div class="description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
-              </div>
-              <
-          </div>
-      </div>
-
-          <div class="item">
-              <img src="./Images/Web/back01.jpg" alt="">
-
-              <div class="content">
-                  <div class="title" style="text-transform: uppercase;">East-Link</div>
-                  <div class="type">Engineering</div>
-                  <div class="description">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
-                  </div>
-                  
-              </div>
-          </div>
-
-          <div class="item">
-              <img src="./Images/Web/back02.webp" alt="">
-
-              <div class="content">
-                  <div class="title" style="text-transform: uppercase;">East-Link</div>
-                  <div class="type">Engineering</div>
-                  <div class="description">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
-                  </div>
-                  
-              </div>
-          </div>
-
-      </div>
-
-
-      <div class="thumbnail">
-
-          <div class="item">
-              <img src="./Images/Web/back04.jpg" alt="">
-          </div>
-          <div class="item">
-              <img src="./Images/Web/back03.jpg" alt="">
-          </div>
-          <div class="item">
-              <img src="./Images/Web/back04.jpg" alt="">
-          </div>
-          <div class="item">
-              <img src="./Images/Web/back05.webp" alt="">
-          </div>
-          <div class="item">
-            <img src="./Images/Web/back01.jpg" alt="">
-        </div>
-        <div class="item">
-          <img src="./Images/Web/back02.webp" alt="">
-      </div>
-        
-
-      </div>
-
-
-      <div class="nextPrevArrows">
-          <button class="prev"> < </button>
-          <button class="next"> > </button>
-      </div>
-
-
-  </div>
-
-    
-
-      <!-- 
-            section 02
-        -->
-
-
-      <!-- 
-        section03
-      -->
-
-      <div class="containers sec03">
-        <div class="main-content">
-          <div class="sec03-left hiddenx">
-            <h2>Our Story</h2>
-            <h1>
-              The Largest Telecom & Datacom Products supplier in Sri Lanka
-            </h1>
+    <!-- main section -->
+    <main>
+      <section class="header-section ethanet-switches" style="height: 80vh;">
+        <div class="overlay">
+          <div class="left">
+            <br>
+            <p>Home > Computer Network Products > Active Products > NIC</p>
             <br />
-            <p>
-              East Link Engineering Co (Pvt) Ltd commenced operation in 1998 and
-              incorporated as a limited liability company in Sri Lanka on 15th
-              September 1999. Core businesses of the company are design,
-              manufacture & supply of Self-Services products, 19" Rack Systems,
-              Cable Management products, import & distribution of Data &
-              Telecommunication products.
-            </p>
-
-            <div class="counters">
-              <div class="con">
-                <h1 class="count" data-target="25">0</h1>
-                <p>Experience</p>
-              </div>
-              <div class="con">
-                <h1 class="count" data-target="500">0</h1>
-                <p>Products</p>
-              </div>
-              <div class="con">
-                <h1 class="count" data-target="30">0</h1>
-                <p>Brands</p>
-              </div>
-            </div>
+            <h1>Network Interface Cards</h1>
+            <br />
+            <h4>
+              we import our products directly from the reputed manufactures or
+              we manufacture the products here in Sri Lanka as per the
+              international standard using quality row materials
+            </h4>
           </div>
-
-          <div class="sec03-right">
-            <div class="sec03-card card01 hiddeny">
-              <div class="content">
-                <h2>Our Mission</h2>
-                <p>Supply World's Best Quality & Technology Products</p>
-                <br />
-                <h5>East-Link Engineering</h5>
-              </div>
-            </div>
-            <div class="sec03-card card02 hiddeny">
-              <div class="content">
-                <h2>Our Vision</h2>
-                <p>To Become the First Choise In ICT Engineering</p>
-                <br />
-                <h5>East-Link Engineering</h5>
-              </div>
-            </div>
-          </div>
+          
         </div>
-      </div>
+      </section>
+ 
 
-      <!-- 
-      section04
-      -->
+       
+
+        <div class="products">
+
+          <div class="product-header" id="level01Npoe_header">
+            <h1>LEVEL ONE</h1>
+            <p>ETHERNET SWITCHES - GIGABIT ETHERNET - NON POE</p>
+          </div>
+
+
+          
+        </div>
+
+
+
+       
+      </div>
 
       
-
-
-      
-
-      <!-- 
-        most selling product section
-      -->
-      <!--
-       section05 
-       -->
-      <div class="containers sec05">
-        <h5>East-Link Website's</h5>
-        <h1>Our Latest Projects In 2024.</h1>
-        <h1>Execution is the single factor</h1>
-
-        <ul class="cards">
-  <li class="hiddenx">
-    <a href="" class="card">
-      <img src="./Images/News/newa1.jpg" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">                    
-          <img class="card__thumb" src="./Images/Web/brands/level01.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Project 01</h3>            
-            <span class="card__status">2024/10/01</span>
-          </div>
-        </div>
-        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>      
-  </li>
-  <li class="hiddenx">
-    <a href="" class="card">
-      <img src="./Images/News/news2.jpg" class="card__image" alt="" />
-      <div class="card__overlay">        
-        <div class="card__header">
-            
-          <img class="card__thumb" src="./Images/Web/EL LOGO.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Project 02</h3>            
-            <span class="card__status">2024/10/01</span>
-          </div>
-        </div>
-        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-  <li class="hiddenx">
-    <a href="" class="card">
-      <img src="./Images/News/news3.jpg" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-                
-          <img class="card__thumb" src="./Images/Web/EL LOGO.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Project 03</h3>            
-            <span class="card__status">2024/10/01</span>
-          </div>
-        </div>
-        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-  <li class="hiddenx">
-    <a href="" class="card">
-      <img src="./Images/News/news.jpg" class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-                    
-          <img class="card__thumb" src="./Images/Web/brands/aten.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Project 04</h3>            
-            <span class="card__status">2024/10/01</span>
-          </div>
-        </div>
-        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-      </div>
-    </a>
-  </li>
-   
-</ul>
-
-        <br><br>
-      </div>
       <!-- 
       footer 
       -->
@@ -712,7 +519,7 @@
         <hr>
         <br>
         <div class="after-content">
-          <p onclick="AdminLogin()" style="cursor: pointer;">East - Link Engineering</p>
+          <p>East - Link Engineering</p>
           <div class="tams">
             <a href="#">Terms and Conditions</a>
             <a href="#">API Use Policy</a>
@@ -724,82 +531,55 @@
       </footer>
     </main>
 
-    <!-- Signup From -->
-    <div class="home">
-      <div class="form_container">
-        <i class="uil uil-times form_close"></i>
-        <!-- Login From -->
-        <div class="form login_form">
-          <form action="#">
-            <h2>Login</h2>
 
-            <div class="input_box">
-              <input type="email" placeholder="Enter your email" required />
-              <i class="uil uil-envelope-alt email"></i>
-            </div>
-            <div class="input_box">
-              <input type="password" placeholder="Enter your password" required />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
 
-            <div class="option_field">
-              <span class="checkbox">
-                <input type="checkbox" id="check" />
-                <label for="check">Remember me</label>
-              </span>
-              <a href="#" class="forgot_pw">Forgot password?</a>
-            </div>
+    <!-- popup windows -->
+    <div id="GEU-0523" class="popup">
+      <div class="popup__block">
+        <h1>GEU-0523</h1>
 
-            <button class="button">Login Now</button>
-
-            <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
-          </form>
+        <div class="img-container">
+          <img src="../../Images/Products/Ethanet_Switches/More/GEU-0523-1.jpg" alt="">
         </div>
 
-        <!-- Signup From -->
-        <div class="form signup_form">
-          <form action="#">
-            <h2>Signup</h2>
-
-            <div class="input_box">
-              <input type="email" placeholder="Enter your email" required />
-              <i class="uil uil-envelope-alt email"></i>
-            </div>
-            <div class="input_box">
-              <input type="password" placeholder="Create password" required />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
-            <div class="input_box">
-              <input type="password" placeholder="Confirm password" required />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-            </div>
-
-            <button class="button">Signup Now</button>
-
-            <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
-          </form>
+        <div class="popup-discription">
+          <h2>GEU-0523 5-Port Gigabit Switch</h2>
+          <h3>Model Number : <span>GEU-0523</span></h3>
+          <h3>SKU : <span>53016303</span></h3>
+          <ul>
+            <li>5 Gigabit Ethernet ports</li>
+            <li>10/100/1000Mbps wire speed transmission and reception</li>
+            <li>9K jumbo frames to increase data transfer rates</li>
+            <li>Supports 2K MAC address auto-learning and auto-aging</li>
+            <li>Provides wall or desktop mounting</li>
+            <li>Minimize carbon footprint with advanced energy efficient technology (IEEE 802.3az)</li>
+          </ul>
+          <p>
+            he LevelOne GEU-0523 is a wire-speed, non-blocking networking device that provides 5 ports 10/100/1000Mbps Ethernet connections. All ports support auto-negotiation and auto-MDI/MDIX sensing, eliminating the need for crossover cables or Uplink Ports. Each port can be used as general network port or as connecting port into a router, server, hub or another network switch. The GEU-0523 is the ideal and cost-effective choice for expanding your network.
+          </p>
+          <br>
+          <a href="https://www.level1.com/level1_en/productpdf/download/file/id/8552/name/GEU-0523__5-Port_Gigabit_Switch.pdf/" target=" "><i class="fa fa-file-pdf-o" aria-hidden="true"></i><span>Technical Document</span></a>
         </div>
+        <a href="#" class="popup__close">close</a>
       </div>
     </div>
+
+  </style>
+
 
     <!-- 
         java script
     -->
-    <script src="./JavaScripts/Script.js"></script>
+    <script src="../../JavaScripts/Script.js"></script>
     <!-- 
         animation js
     -->
-    <script src="./JavaScripts/animation.js"></script>
-    <!-- 
+    <script src="../../JavaScripts/animation.js"></script>
+
+        <!-- 
         sweet alert
     -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!-- slider js -->
-     <script src="./JavaScripts/Slider.js"></script>
 
     <script>
       async function  AdminLogin(){
