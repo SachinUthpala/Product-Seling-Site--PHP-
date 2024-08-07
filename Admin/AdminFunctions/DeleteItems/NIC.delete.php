@@ -330,7 +330,7 @@ if(!$userName || !$userMail){
                             <td><?php echo $items['discription']; ?></td>
                             <td><?php echo $items['company']; ?></td>
                             <td>
-                                <form action="../../../BackEnd/deleteItems/EthanetSwitch_delete.php"  method="post" id="DeleteForm">
+                                <form action="../../../BackEnd/deleteItems/NIC.delete.php"  method="post" id="DeleteForm">
                                     <input type="hidden" name="itemId" value="<?php echo $items['itemId']; ?>">
                                     <input type="hidden" name="itemImage" value="<?php echo $items['image'];  ?>">
                                     <input type="submit" name="delete" value="Delete" class="btn btn-primary">
