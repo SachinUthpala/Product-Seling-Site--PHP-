@@ -5,5 +5,6 @@
         "Imgname",
         "itemcode",
         "uploadimage"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
