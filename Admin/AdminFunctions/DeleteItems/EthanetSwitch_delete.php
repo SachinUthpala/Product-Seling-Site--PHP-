@@ -521,6 +521,7 @@ $total_items_all = $result_all['total_items'];
                             <td>
                                 <form action="../../../BackEnd/deleteItems/EthanetSwitch_delete.php"  method="post" id="DeleteForm">
                                     <input type="hidden" name="itemId" value="<?php echo $items['itemId']; ?>">
+                                    <input type="hidden" name="itemImage" value="<?php echo $items['image'];  ?>">
                                     <input type="submit" name="delete" value="Delete" class="btn btn-primary">
                                 </form>
                             </td>
