@@ -301,8 +301,8 @@ if(!$userName || !$userMail){
                   data-feather="alert-triangle"></i><span>Delete Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li><a class="nav-link" href="#">Ethernet Switches</a></li>
-                <li><a class="nav-link" href="#">Network Interface Cards</a></li>
+                <li><a class="nav-link" href="./DeleteItems/EthanetSwitch_delete.php">Ethernet Switches</a></li>
+                <li><a class="nav-link" href="./DeleteItems/NIC.delete.php">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
                 <li><a class="nav-link" href="#">Wireless Lan Products</a></li>

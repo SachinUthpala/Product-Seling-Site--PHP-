@@ -13,57 +13,9 @@ if(!$userName || !$userMail){
 }
 
 
-// fetching data from database
-$sql_GIG_NPE = "SELECT COUNT(*) as total_items FROM `ethanet_switches` WHERE poeType = 'GIG_NPE'";
-$stmt_GIG_NPE = $conn->prepare($sql_GIG_NPE);
-$stmt_GIG_NPE->execute();
-$result_GIG_NPE = $stmt_GIG_NPE->fetch(PDO::FETCH_ASSOC);
-$total_items_GIG_NPE = $result_GIG_NPE['total_items'];
-
-
-$sql_GIG_PE= "SELECT COUNT(*) as total_items_PE FROM `ethanet_switches` WHERE poeType = 'GIG_PE'";
-$stmt_GIG_PE = $conn->prepare($sql_GIG_PE);
-$stmt_GIG_PE->execute();
-$result_GIG_PE = $stmt_GIG_PE->fetch(PDO::FETCH_ASSOC);
-$total_items_GIG_PE = $result_GIG_PE['total_items_PE'];
-
-$sql_FE_NPE= "SELECT COUNT(*) as total_items_FE_NPE FROM `ethanet_switches` WHERE poeType = 'FE_NPE'";
-$stmt_FE_NPE = $conn->prepare($sql_FE_NPE);
-$stmt_FE_NPE->execute();
-$result_FE_NPE = $stmt_FE_NPE->fetch(PDO::FETCH_ASSOC);
-$total_items_FE_NPE = $result_FE_NPE['total_items_FE_NPE'];
-
-
-
-
-$sql_FE_PE= "SELECT COUNT(*) as total_itemsFE_PE FROM `ethanet_switches` WHERE poeType = 'FE_PE'";
-$stmt_FE_PE= $conn->prepare($sql_FE_PE);
-$stmt_FE_PE->execute();
-$result_FE_PE = $stmt_FE_PE->fetch(PDO::FETCH_ASSOC);
-$total_items_FE_PE = $result_FE_PE['total_itemsFE_PE'];
-
-
-
-
-$sql_TRANSCEIVERS= "SELECT COUNT(*) as total_items_TRANSCEIVERS FROM `ethanet_switches` WHERE poeType = 'TRANSCEIVERS'";
-$stmt_TRANSCEIVERS = $conn->prepare($sql_TRANSCEIVERS);
-$stmt_TRANSCEIVERS->execute();
-$result_TRANSCEIVERS= $stmt_TRANSCEIVERS->fetch(PDO::FETCH_ASSOC);
-$total_items_TRANSCEIVERS = $result_TRANSCEIVERS['total_items_TRANSCEIVERS'];
-
-
-$all_sql = "SELECT COUNT(*) as total_items FROM `ethanet_switches`";
-$sqmtp_all = $conn->prepare($all_sql);
-$sqmtp_all->execute();
-$result_all = $sqmtp_all->fetch(PDO::FETCH_ASSOC);
-$total_items_all = $result_all['total_items'];
-
-
-
-
-
-
 ?>
+
+
 
 
 
@@ -274,8 +226,8 @@ $total_items_all = $result_all['total_items'];
                   data-feather="alert-triangle"></i><span>Delete Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li class="active"><a class="nav-link" href="#">Ethernet Switches</a></li>
-                <li><a class="nav-link" href="./NIC.delete.php">Network Interface Cards</a></li>
+                <li><a class="nav-link" href="./EthanetSwitch_delete.php">Ethernet Switches</a></li>
+                <li  class="active"><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
                 <li><a class="nav-link" href="#">Wireless Lan Products</a></li>
@@ -328,7 +280,7 @@ $total_items_all = $result_all['total_items'];
             $n = 1;
 
 
-            $sql = "SELECT * FROM `ethanet_switches`";
+            $sql = "SELECT * FROM `network_cards`";
             $smtp = $conn->prepare($sql);
             $smtp->execute();
 
@@ -337,146 +289,7 @@ $total_items_all = $result_all['total_items'];
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
-          <div class="row ">
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">NON POE</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_GIG_NPE; ?></h2>
-                          <p class="mb-0"><span class="col-green">GIGABYTE</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/1.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15"> POE</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_GIG_PE; ?></h2>
-                          <p class="mb-0"><span class="col-green">GIGABYTE</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/2.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">NON POE</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_FE_NPE; ?></h2>
-                          <p class="mb-0"><span class="col-green">FAST E-NET</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">POE</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_FE_PE; ?></h2>
-                          <p class="mb-0"><span class="col-green">FAST E-NET</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">TR-SEVER</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_TRANSCEIVERS ; ?></h2>
-                          <p class="mb-0"><span class="col-green">TR-SEVER</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">TOTAL</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_all ; ?></h2>
-                          <p class="mb-0"><span class="col-green">PRODUCTS</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
           <!-- data table -->
           <div class="section-body">
@@ -484,7 +297,7 @@ $total_items_all = $result_all['total_items'];
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Ethernet Switches</h4>
+                    <h4>Network Interface Cards</h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -499,7 +312,6 @@ $total_items_all = $result_all['total_items'];
                             <th>Order No</th>
                             <th>Image</th>
                             <th>Description</th>
-                            <th>Poe Type</th>
                             <th>Company</th>
                             <th>Delete</th>
                           </tr>
@@ -516,7 +328,6 @@ $total_items_all = $result_all['total_items'];
                               <img alt="image" src="<?php echo "../../../".$items['image']; ?>" width="35">
                             </td>
                             <td><?php echo $items['discription']; ?></td>
-                            <td><?php echo $items['poeType']; ?></td>
                             <td><?php echo $items['company']; ?></td>
                             <td>
                                 <form action="../../../BackEnd/deleteItems/EthanetSwitch_delete.php"  method="post" id="DeleteForm">
