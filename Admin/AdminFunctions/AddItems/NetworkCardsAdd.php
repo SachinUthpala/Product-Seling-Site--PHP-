@@ -276,150 +276,15 @@ if(!$userName || !$userMail){
       <div class="main-content">
         <section class="section">
           <div class="row ">
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">NON POE</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_GIG_NPE; ?></h2>
-                          <p class="mb-0"><span class="col-green">GIGABYTE</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/1.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15"> POE</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_GIG_PE; ?></h2>
-                          <p class="mb-0"><span class="col-green">GIGABYTE</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/2.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">NON POE</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_FE_NPE; ?></h2>
-                          <p class="mb-0"><span class="col-green">FAST E-NET</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
 
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">POE</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_FE_PE; ?></h2>
-                          <p class="mb-0"><span class="col-green">FAST E-NET</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">TR-SEVER</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_TRANSCEIVERS ; ?></h2>
-                          <p class="mb-0"><span class="col-green">TR-SEVER</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="card">
-                <div class="card-statistic-4">
-                  <div class="align-items-center justify-content-between">
-                    <div class="row ">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
-                        <div class="card-content">
-                          <h5 class="font-15">TOTAL</h5>
-                          <h2 class="mb-3 font-18"><?php echo $total_items_all ; ?></h2>
-                          <p class="mb-0"><span class="col-green">PRODUCTS</span></p>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                        <div class="banner-img">
-                          <img src="assets/img/banner/3.png" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="card">
-                  <form class="needs-validation" action="../../../BackEnd/AddItems/ethanet.conn.php" novalidate=""  enctype="multipart/form-data" method="post" >
+                  <form class="needs-validation" action="../../../BackEnd/AddItems/NIC.add.php" novalidate=""  enctype="multipart/form-data" method="post" >
                     <div class="card-header">
-                      <h4>Add Ethernet Switch</h4>
+                      <h4>Add Network Interface Card</h4>
                     </div>
                     <div class="card-body">
                       <div class="form-group">
@@ -445,16 +310,7 @@ if(!$userName || !$userMail){
                         
                       </div>
 
-                      <div class="form-group">
-                        <label>Select <code>.POE Type / Transceivers</code></label>
-                        <select class="form-control form-control-lg" name="poe">
-                            <option value="GIG_NPE">GIGABIT ETHERNET - NON POE</option>
-                            <option value="GIG_PE">GIGABIT ETHERNET - POE</option>
-                            <option value="FE_NPE">FAST ETHERNET - NON POE</option>
-                            <option value="FE_PE">FAST ETHERNET - POE</option>
-                            <option value="TRANSCEIVERS">TRANSCEIVERS</option>
-                        </select>
-                      </div>
+                      
 
                       <div class="form-group">
                         <label>Select <code>.Company</code></label>

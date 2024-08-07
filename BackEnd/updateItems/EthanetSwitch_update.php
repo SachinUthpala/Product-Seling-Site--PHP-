@@ -10,7 +10,7 @@ if(isset($_POST['add'])){
     $technical = $_POST['technical'];
     $moreDetails = $_POST['moreDetails'];
 
-    echo $itemcode." ".$orderNo." ".$discription." ".$poe;
+    
 
 }else if(isset($_POST['cancel'])){
 
