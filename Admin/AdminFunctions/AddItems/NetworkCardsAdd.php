@@ -13,56 +13,6 @@ if(!$userName || !$userMail){
 }
 
 
-// fetching data from database
-$sql_GIG_NPE = "SELECT COUNT(*) as total_items FROM `ethanet_switches` WHERE poeType = 'GIG_NPE'";
-$stmt_GIG_NPE = $conn->prepare($sql_GIG_NPE);
-$stmt_GIG_NPE->execute();
-$result_GIG_NPE = $stmt_GIG_NPE->fetch(PDO::FETCH_ASSOC);
-$total_items_GIG_NPE = $result_GIG_NPE['total_items'];
-
-
-$sql_GIG_PE= "SELECT COUNT(*) as total_items_PE FROM `ethanet_switches` WHERE poeType = 'GIG_PE'";
-$stmt_GIG_PE = $conn->prepare($sql_GIG_PE);
-$stmt_GIG_PE->execute();
-$result_GIG_PE = $stmt_GIG_PE->fetch(PDO::FETCH_ASSOC);
-$total_items_GIG_PE = $result_GIG_PE['total_items_PE'];
-
-$sql_FE_NPE= "SELECT COUNT(*) as total_items_FE_NPE FROM `ethanet_switches` WHERE poeType = 'FE_NPE'";
-$stmt_FE_NPE = $conn->prepare($sql_FE_NPE);
-$stmt_FE_NPE->execute();
-$result_FE_NPE = $stmt_FE_NPE->fetch(PDO::FETCH_ASSOC);
-$total_items_FE_NPE = $result_FE_NPE['total_items_FE_NPE'];
-
-
-
-
-$sql_FE_PE= "SELECT COUNT(*) as total_itemsFE_PE FROM `ethanet_switches` WHERE poeType = 'FE_PE'";
-$stmt_FE_PE= $conn->prepare($sql_FE_PE);
-$stmt_FE_PE->execute();
-$result_FE_PE = $stmt_FE_PE->fetch(PDO::FETCH_ASSOC);
-$total_items_FE_PE = $result_FE_PE['total_itemsFE_PE'];
-
-
-
-
-$sql_TRANSCEIVERS= "SELECT COUNT(*) as total_items_TRANSCEIVERS FROM `ethanet_switches` WHERE poeType = 'TRANSCEIVERS'";
-$stmt_TRANSCEIVERS = $conn->prepare($sql_TRANSCEIVERS);
-$stmt_TRANSCEIVERS->execute();
-$result_TRANSCEIVERS= $stmt_TRANSCEIVERS->fetch(PDO::FETCH_ASSOC);
-$total_items_TRANSCEIVERS = $result_TRANSCEIVERS['total_items_TRANSCEIVERS'];
-
-
-$all_sql = "SELECT COUNT(*) as total_items FROM `ethanet_switches`";
-$sqmtp_all = $conn->prepare($all_sql);
-$sqmtp_all->execute();
-$result_all = $sqmtp_all->fetch(PDO::FETCH_ASSOC);
-$total_items_all = $result_all['total_items'];
-
-
-
-
-
-
 ?>
 
 
@@ -205,7 +155,7 @@ $total_items_all = $result_all['total_items'];
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
                 <li><a class="nav-link" href="../AllItems/EthanetSwitch_all.php">Ethernet Switches</a></li>
-                <li><a class="nav-link" href="">Network Interface Cards</a></li>
+                <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
                 <li><a class="nav-link" href="#">Wireless Lan Products</a></li>
@@ -236,8 +186,8 @@ $total_items_all = $result_all['total_items'];
                   data-feather="shopping-bag"></i><span>Add Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li class="active"><a class="nav-link" href="#">Ethernet Switches</a></li>
-                <li><a class="nav-link" href="./NetworkCardsAdd.php">Network Interface Cards</a></li>
+                <li class="active"><a class="nav-link" href="./EthanetSwitch_add.php">Ethernet Switches</a></li>
+                <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
                 <li><a class="nav-link" href="#">Wireless Lan Products</a></li>
