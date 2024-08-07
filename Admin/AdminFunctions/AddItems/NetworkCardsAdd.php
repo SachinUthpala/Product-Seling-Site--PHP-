@@ -186,8 +186,8 @@ if(!$userName || !$userMail){
                   data-feather="shopping-bag"></i><span>Add Products</span></a>
               <ul class="dropdown-menu">
                 <li class="menu-header">ACTIVE PRODUCTS</li>
-                <li class="active"><a class="nav-link" href="./EthanetSwitch_add.php">Ethernet Switches</a></li>
-                <li><a class="nav-link" href="#">Network Interface Cards</a></li>
+                <li><a class="nav-link" href="./EthanetSwitch_add.php">Ethernet Switches</a></li>
+                <li class="active"><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Network Interface Cards</a></li>
                 <li><a class="nav-link" href="#">Media Converters</a></li>
                 <li><a class="nav-link" href="#">Wireless Lan Products</a></li>
