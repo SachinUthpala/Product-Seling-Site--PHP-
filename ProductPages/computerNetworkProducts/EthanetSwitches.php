@@ -46,10 +46,9 @@ session_start();
     <!-- tab icon -->
     <link rel="icon" href="../../Images/Web/EL LOGO.png" />
 
-    <!--Start of Tawk.to Script-->
-    <!-- Unicons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-    <!--End of Tawk.to Script-->
+        <!-- font awsome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <style>
       #GEU-0523:target{
@@ -84,24 +83,18 @@ session_start();
               </li>
 
               <li class="nav-link" style="--i: 0.85s">
-                <a href="#" ondblclick="location.href='./Products.html'">PRODUCTS<i class="fas fa-caret-down"></i></a>
+                <a href="#" ondblclick="location.href='./Products.html'">PRODUCTS</a>
                 <div class="dropdown">
                   <!-- sub menu -->
                   <ul>
                     <li class="dropdown-link">
                       <a href="#"
-                        >COMPUTER NETWORK PRODUCT<i
-                          class="fas fa-caret-down"
-                        ></i
-                      ></a>
+                        >COMPUTER NETWORK PRODUCT</a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
                             <a href="#"
-                              >ACTIVE NETWORK PRODUCTS<i
-                                class="fas fa-caret-down"
-                              ></i
-                            ></a>
+                              >ACTIVE NETWORK PRODUCTS</a>
                             <div class="dropdown second">
                               <ul>
                                 <li class="dropdown-link">
@@ -125,10 +118,7 @@ session_start();
                           </li>
                           <li class="dropdown-link">
                             <a href="#"
-                              >PASSIVE NETWORK PRODUCTS<i
-                                class="fas fa-caret-down"
-                              ></i
-                            ></a>
+                              >PASSIVE NETWORK PRODUCTS</a>
                             <div class="dropdown second">
                               <ul>
                                 <li class="dropdown-link">
@@ -149,18 +139,12 @@ session_start();
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >DATA CENTER/SERVER ROOM PRODUCTS<i
-                          class="fas fa-caret-down"
-                        ></i
-                      ></a>
+                        >DATA CENTER/SERVER ROOM PRODUCTS</a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
                             <a href="#"
-                              >19" SERVER RACKS & ACCESSORIES<i
-                                class="fas fa-caret-down"
-                              ></i
-                            ></a>
+                              >19" SERVER RACKS & ACCESSORIES</a>
                            <div class="dropdown second">
                               <ul>
                                 <li class="dropdown-link">
@@ -218,10 +202,7 @@ session_start();
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >CABLE MANAGEMENT PRODUCTS<i
-                          class="fas fa-caret-down"
-                        ></i
-                      ></a>
+                        >CABLE MANAGEMENT PRODUCTS</a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
@@ -269,10 +250,7 @@ session_start();
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >TELECOMMUNICATION PRODUCT<i
-                          class="fas fa-caret-down"
-                        ></i
-                      ></a>
+                        >TELECOMMUNICATION PRODUCT</a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
@@ -298,8 +276,7 @@ session_start();
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >AUDIO/VIDEO PRODUCTS<i class="fas fa-caret-down"></i
-                      ></a>
+                        >AUDIO/VIDEO PRODUCTS</a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
@@ -344,8 +321,7 @@ session_start();
 
                     <li class="dropdown-link">
                       <a href="#"
-                        >OTHER PRODUCTS<i class="fas fa-caret-down"></i
-                      ></a>
+                        >OTHER PRODUCTS</a>
                       <div class="dropdown second">
                         <ul>
                           <li class="dropdown-link">
@@ -369,7 +345,7 @@ session_start();
               </li>
 
               <li class="nav-link" style="--i: 0.85s">
-                <a href="#">SUPPORT<i class="fas fa-caret-down"></i></a>
+                <a href="#">SUPPORT</a>
                 <div class="dropdown">
                   <ul>
                     <li class="dropdown-link">

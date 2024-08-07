@@ -59,6 +59,15 @@ section{
     background: url('../Images/Web/pexels-divinetechygirl-1181354.jpg') no-repeat top center / cover;
     overflow: hidden;
 }
+
+
+.NIC-cards{
+    background: url('../Images/Web/back04.jpg') no-repeat top center / cover;
+}
+
+
+
+
 .overlay{
     position: absolute;
     width: 100%;
