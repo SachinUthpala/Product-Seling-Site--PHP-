@@ -101,7 +101,7 @@ session_start();
                                   <a href="#">ETHERNET SWITCHES</a>
                                 </li>
                                 <li class="dropdown-link">
-                                  <a href="#">NETWORK INTERFACE CARDS</a>
+                                  <a href="./NIC.php">NETWORK INTERFACE CARDS</a>
                                 </li>
                                 <li class="dropdown-link">
                                   <a href="#">MEDIA CONVERTERS</a>

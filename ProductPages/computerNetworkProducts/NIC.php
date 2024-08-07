@@ -420,7 +420,7 @@ session_start();
 
           <div class="product-header" id="level01Npoe_header">
             <h1>LEVEL ONE</h1>
-            <p>ETHERNET SWITCHES - GIGABIT ETHERNET - NON POE</p>
+            <p>NETWORK INTERFACE CARDS</p>
           </div>
 
 
