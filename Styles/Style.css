@@ -112,82 +112,185 @@ main{
     section 2
 */
 
-.section02{
-    padding-top: 100px;
-}
+.section2{
+  display: flex;
+  flex-direction: row;
+  padding: 30px 50px;
+  gap: 50px;
+  align-items: flex-start;
+  
+  .content{
+    flex: 1;
 
-.section02 > .content{
- text-align: center;
-}
+    p{
+        padding-top: 20px;
+    }
 
+    ul{
+      list-style: disc;
+      padding-left: 30px;
 
-.section02 > .content > h4{
-    font-size: 15px;
-    font-weight: normal;
-}
-
-
-.section02 > .content > h1{
-    font-size: 30px;
-    color: #1d1d1d;
-    padding: 10px 100px;
-}
-
-.section02 >  .cards{
-    margin-top: 55px;
-    display: grid;
-    grid-template-columns: repeat(4 , 270px);
-    gap: 50px;
-    align-items: center;
-    justify-content: center;
-}
-
-.section02 >  .cards > .item{
-    padding: 20px 15px;
-    text-align: center;
-    border-bottom: 3px solid #777777ad;
-}
-
-.section02 >  .cards > .item > i{
-    font-size: 45px;
-    color: #292929b6;
-}
-
-.section02 >  .cards > .item > h1{
-    font-family: "Oswald", sans-serif;
-    font-size: 25px;
-    margin: 35px 0px 10px 0px;
-}
-
-.section02 >  .cards > .item > p{
-    font-size: 12px;
-    font-weight: bold;
-    color: #2c2c2c;
-    margin-bottom: 10px;
-}
-
-.section02 >  .cards > .item:hover{
-    cursor: pointer;
-    box-shadow: #4141413a 0px 2px 8px 0px;
+      li{
+        padding: 8px;
+      }
+    }
+  }
 }
 
 
-.section02 >  .cards > .item:nth-child(1){
-    transition-delay: 100ms;
+.gallery {
+  flex: 0.7;
+  --size: min(70vmin, 900px);
+  box-shadow: 
+    0 0 10px rgba(0, 0, 0, 0.048),
+    0 20px 40px -20px rgba(0, 0, 0, 0.055);
+  width: var(--size);
+  height: var(--size);
+  background: #fff;
+  border: 6px solid #fff;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  gap: 6px;
 }
 
-.section02 >  .cards > .item:nth-child(2){
-    transition-delay: 200ms;
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.section02 >  .cards > .item:nth-child(3){
-    transition-delay: 300ms;
+@keyframes moveHorizontal {
+  to {
+    object-position: 100% 0;
+  }
 }
 
-.section02 >  .cards > .item:nth-child(4){
-    transition-delay: 400ms;
+@keyframes moveVertical {
+  to {
+    object-position: 0 100%;
+  }
 }
 
+@keyframes shrinkVertical {
+  to {
+    height: 0;
+  }
+}
+
+@keyframes shrinkHorizontal {
+  to {
+    width: 0;
+  }
+}
+
+
+@keyframes growHorizontal {
+  to {
+    width: 100%;
+  }
+}
+@keyframes growHorizontal2 {
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes growVertical {
+  to {
+    height: 100%;
+  }
+}
+
+
+@keyframes growAll {
+  to {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.gallery img:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  animation: 
+    moveHorizontal 8.5s 0.5s 1,
+    shrinkHorizontal 2s 9s ease-in 1;
+  animation-fill-mode: forwards;
+}
+
+.gallery img:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  animation: 
+    shrinkHorizontal 2s 11s 1;
+  animation-fill-mode: forwards;
+}
+
+.gallery img:nth-child(3) {
+  grid-row: 2;
+  grid-column: 1 / 3;
+  align-self: end;
+  object-position: 0 0;
+  animation:
+    moveVertical 5s 1s 1,
+    shrinkVertical 3s 5s 1;
+  animation-fill-mode: forwards;
+}
+
+.gallery img:nth-child(4) {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  width: 0;
+  justify-self: center;
+  align-self: start;
+  animation: 
+    growHorizontal 2.25s 11s 1,
+    moveHorizontal 4s 14s 1,
+    shrinkVertical 2s 18s 1;
+  animation-fill-mode: forwards;
+}
+
+.gallery img:nth-child(5) {
+  grid-column: 1;
+  grid-row: 2;
+  width: 0;
+  justify-self: start;
+  align-self: end;
+  animation: 
+    growHorizontal 2.5s 7.5s 1,
+    moveVertical 4s 12.5s 1,
+    shrinkHorizontal 2s 17s 1;;
+  animation-fill-mode: forwards;
+}
+
+.gallery img:nth-child(6) {
+  grid-column: 2;
+  grid-row: 2;
+  width: 0;
+  justify-self: end;
+  align-self: end;
+  animation: 
+    growHorizontal 2s 8s 1,
+    shrinkHorizontal 2s 17s 1;
+  animation-fill-mode: forwards;
+}
+
+.gallery img:nth-child(7) {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  width: 0;
+  justify-self: end;
+  align-self: end;
+  object-position: 0 0;
+  animation: 
+    growHorizontal 2s 20s 1,
+    moveHorizontal 16s 21.5s 1;
+  animation-fill-mode: forwards;
+}
 
 /* top button */
 
@@ -626,7 +729,7 @@ footer > .content > .end-right > ul > li > a:hover {
     border-bottom: 1.5px solid #aaaaaa;
   }
   .input_box input:focus {
-    border-color: #ff000d;
+    border-color: #ffffff;
   }
   .input_box i {
     position: absolute;
@@ -896,7 +999,7 @@ end of product page
   }
   
   .contact-form {
-    background-color: #ff000d;
+    background-color: #ffffff;
     position: relative;
   }
   
@@ -925,7 +1028,7 @@ end of product page
     position: absolute;
     width: 26px;
     height: 26px;
-    background-color: #ff000d;
+    background-color: #ff0000;
     transform: rotate(45deg);
     top: 50px;
     left: -13px;
@@ -954,10 +1057,10 @@ end of product page
   .input {
     width: 100%;
     outline: none;
-    border: 2px solid #fafafa;
+    border: 2px solid #000000;
     background: none;
     padding: 0.6rem 1.2rem;
-    color: #fff;
+    color: #000000;
     font-weight: 500;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
@@ -979,7 +1082,7 @@ end of product page
     left: 15px;
     transform: translateY(-50%);
     padding: 0 0.4rem;
-    color: #fafafa;
+    color: #000000;
     font-size: 0.9rem;
     font-weight: 400;
     pointer-events: none;
@@ -994,10 +1097,10 @@ end of product page
   
   .btn {
     padding: 0.6rem 1.3rem;
-    background-color: #fff;
-    border: 2px solid #fafafa;
+    background-color: #ff0000;
+    border: 2px solid #ff0000;
     font-size: 0.95rem;
-    color: #ff000d;
+    color: #ffffff;
     line-height: 1;
     border-radius: 25px;
     outline: none;
@@ -1008,7 +1111,7 @@ end of product page
   
   .btn:hover {
     background-color: transparent;
-    color: #fff;
+    color: #ff0000;
   }
   
   .input-container span {
@@ -1031,7 +1134,7 @@ end of product page
     opacity: 0;
     transition: 0.3s;
     height: 5px;
-    background-color: #ff000d;
+    background-color: #ffffff;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -1129,16 +1232,7 @@ end of product page
     opacity: 0.3;
   }
   
-  .big-circle {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, #ff000d, #d1000a);
-    bottom: 50%;
-    right: 50%;
-    transform: translate(-40%, 38%);
-  }
+  
   
   .big-circle:after {
     content: "";
@@ -1302,22 +1396,8 @@ end of product page
     /* 
     section02 */
 
-    .section02 > .content > h4{
-        font-size: 15px;
-        font-weight: normal;
-    }
-    
-    
-    .section02 > .content > h1{
-        font-size: 25px;
-        color: #1d1d1d;
-        padding: 10px 0px;
-    }
-
-    .section02 >  .cards{
-        display: flex;
-        flex-direction: column;
-        gap: 100px;
+    .section2{
+      flex-direction: column;
     }
     
     .top{

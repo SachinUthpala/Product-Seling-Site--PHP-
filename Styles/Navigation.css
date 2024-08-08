@@ -358,8 +358,8 @@ section{
 
     .nav-btn{
         position: fixed;
-        height: calc(100vh - 3rem);
-        top: 3rem;
+        height: calc(100vh);
+        top: 2rem;
         left: 0;
         width: 100%;
         background-color: #fdfdfd;
