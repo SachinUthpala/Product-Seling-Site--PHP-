@@ -424,7 +424,49 @@ session_start();
           </div>
 
 
-          
+          <div class="product-items" >
+
+            <?php
+              // fetching data from database
+              $sql_NIC = "SELECT * FROM `network_cards` WHERE  company = 'LEVEL_ONE'";
+              $stmt_NIC = $conn->prepare($sql_NIC);
+              $stmt_NIC->execute();
+              
+            ?>
+
+            <?php while($result_NIC = $stmt_NIC->fetch(PDO::FETCH_ASSOC)){ ?>
+            <!-- ----------------------------- -->
+            <div class="product-card" >
+              <div class='main'>
+                <img class='tokenImage' src="<?php echo '../../'.$result_NIC['image'];  ?>" width="300px" alt="product" />
+                <h2><?php echo $result_NIC['itemCode']; ?></h2>
+                <p class='description'><?php echo $result_NIC['discription']; ?></p>
+                <p>Order No : <?php echo $result_NIC['orderNo']; ?></p>
+                <br>
+                <div class='tokenInfo'>
+                  <div class="price">
+                    <a href="#GEU-0523">Know More...</a>
+                  </div>
+                  <div class="duration">
+                      ➕
+                  </div>
+                </div>
+                <br>
+                <hr />
+                <div class='creator'>
+                  <div class='wrapper'>
+                    <img src="../../Images/Web/brands/level01.png" alt="Creator" />
+                  </div>
+                  <p><ins>Product of</ins> Level One</p>
+                </div>
+              </div>
+            </div>
+              <?php } ?>
+            
+            <!-- ----------------------------- -->
+
+          </div>
+
         </div>
 
 
